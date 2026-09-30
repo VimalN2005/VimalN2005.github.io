@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vimal Sahani | Software Development Engineer & AI Systems</title>
+  <meta name="description" content="Portfolio of Vimal Sahani - B.Tech IT @ IIIT Bhopal, Open Source Contributor to Google TensorFlow, Django, Celery & Hugging Face." />
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#f0fdf4',
+              500: '#22c55e',
+              600: '#16a34a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .bg-grid {
+      background-size: 40px 40px;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-emerald-500 selection:text-black">
+
+  <!-- NAVBAR -->
+  <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800/80">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2 font-bold text-lg text-white">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-tr from-emerald-500 to-cyan-500 flex items-center justify-center text-slate-950 font-extrabold text-sm shadow-lg shadow-emerald-500/20">VS</span>
+        <span>Vimal Sahani</span>
+        <span class="ml-2 text-xs font-mono font-semibold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">PRO</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#about" class="hover:text-emerald-400 transition-colors">About</a>
+        <a href="#opensource" class="hover:text-emerald-400 transition-colors">Open Source</a>
+        <a href="#projects" class="hover:text-emerald-400 transition-colors">Projects</a>
+        <a href="#skills" class="hover:text-emerald-400 transition-colors">Tech Stack</a>
+        <a href="#contact" class="hover:text-emerald-400 transition-colors">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="https://github.com/VimalN2005" target="_blank" class="px-3.5 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-800 text-xs font-medium transition-all flex items-center gap-2">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a href="mailto:vimalsahani2005@gmail.com" class="px-3.5 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-xs transition-all shadow-md shadow-emerald-500/20">
+          Hire Me
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-grid overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-slate-950/60 to-slate-950"></div>
+    <div class="relative max-w-6xl mx-auto px-6">
+      
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/90 border border-emerald-500/30 text-emerald-400 text-xs font-mono mb-6 shadow-inner">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Available for Full-Stack & AI Engineering Internships
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight max-w-4xl">
+        Building Scalable Backend Systems & <span class="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">Production AI Platforms</span>.
+      </h1>
+
+      <p class="mt-6 text-lg sm:text-xl text-slate-400 max-w-2xl leading-relaxed">
+        Hi, I'm <strong class="text-white">Vimal Sahani</strong> — B.Tech IT Undergraduate at <strong class="text-white">IIIT Bhopal</strong>. Active open-source contributor to <span class="text-slate-200 font-semibold">Google TensorFlow, Django, Celery & Hugging Face</span>.
+      </p>
+
+      <!-- METRICS BADGES -->
+      <div class="mt-8 flex flex-wrap gap-4 text-xs font-mono">
+        <div class="px-3 py-2 rounded-lg bg-slate-900/80 border border-slate-800 text-slate-300">
+          🚀 <strong class="text-emerald-400 font-bold text-sm">19+</strong> Merged Pull Requests
+        </div>
+        <div class="px-3 py-2 rounded-lg bg-slate-900/80 border border-slate-800 text-slate-300">
+          ⭐ Major Open Source Contributor
+        </div>
+        <div class="px-3 py-2 rounded-lg bg-slate-900/80 border border-slate-800 text-slate-300">
+          🎓 GitHub Pro Verified Fellow
+        </div>
+      </div>
+
+      <!-- CTA BUTTONS -->
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a href="#opensource" class="px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm transition-all shadow-lg shadow-emerald-500/25 flex items-center gap-2">
+          View Open Source Work
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+        </a>
+        <a href="#projects" class="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-medium text-sm border border-slate-800 transition-all">
+          Explore Projects
+        </a>
+        <a href="https://linkedin.com/in/vimal-sahani" target="_blank" class="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white font-medium text-sm border border-slate-800 transition-all flex items-center gap-2">
+          LinkedIn Profile ↗
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- OPEN SOURCE IMPACT (THE SHOWSTOPPER) -->
+  <section id="opensource" class="py-20 border-t border-slate-900 bg-slate-950">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <span class="text-emerald-400 font-mono text-xs uppercase tracking-wider font-semibold">Track Record</span>
+          <h2 class="text-3xl font-bold text-white mt-1">Open Source Contributions</h2>
+          <p class="text-slate-400 text-sm mt-2 max-w-xl">
+            Authored and successfully merged pull requests into the foundational libraries powering the modern AI & web stack.
+          </p>
+        </div>
+        <div class="mt-4 md:mt-0 text-slate-400 font-mono text-xs">
+          Total Merged: <span class="text-emerald-400 font-bold">19 PRs</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- TensorFlow -->
+        <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-emerald-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-bold text-lg text-white">Google TensorFlow</span>
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Merged</span>
+            </div>
+            <p class="text-sm text-slate-300">
+              Added regression test suite for <code class="text-xs font-mono bg-slate-800 px-1 py-0.5 rounded text-emerald-300">tf.math.log_sigmoid</code> float64 second derivative calculations.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800/60 flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-400">PR #127639</span>
+            <a href="https://github.com/tensorflow/tensorflow/pull/127639" target="_blank" class="text-emerald-400 hover:text-emerald-300 font-medium flex items-center gap-1">
+              View on GitHub ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Django -->
+        <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-emerald-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-bold text-lg text-white">Django</span>
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Merged</span>
+            </div>
+            <p class="text-sm text-slate-300">
+              Engineered <code class="text-xs font-mono bg-slate-800 px-1 py-0.5 rounded text-emerald-300">django.utils.module_loading.qualname</code> helper for robust module metadata extraction.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800/60 flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-400">PR #21875</span>
+            <a href="https://github.com/django/django/pull/21875" target="_blank" class="text-emerald-400 hover:text-emerald-300 font-medium flex items-center gap-1">
+              View on GitHub ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Celery -->
+        <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-emerald-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-bold text-lg text-white">Celery Distributed Queue</span>
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">3 Merged</span>
+            </div>
+            <p class="text-sm text-slate-300">
+              Multi-server URL routing, bug reports sanitization, task stamping metadata, and database backend task storage fixes.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800/60 flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-400">PRs #10605, #10606, #10607</span>
+            <a href="https://github.com/celery/celery/pull/10607" target="_blank" class="text-emerald-400 hover:text-emerald-300 font-medium flex items-center gap-1">
+              View on GitHub ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Microsoft PyRIT -->
+        <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-emerald-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-bold text-lg text-white">Microsoft PyRIT</span>
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Merged</span>
+            </div>
+            <p class="text-sm text-slate-300">
+              Implemented Garak divergence scenario to bolster Python Red Teaming & security evaluation for foundation models.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800/60 flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-400">PR #2547</span>
+            <a href="https://github.com/microsoft/PyRIT/pull/2547" target="_blank" class="text-emerald-400 hover:text-emerald-300 font-medium flex items-center gap-1">
+              View on GitHub ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Hugging Face -->
+        <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-emerald-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-bold text-lg text-white">Hugging Face Transformers</span>
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">2 Merged</span>
+            </div>
+            <p class="text-sm text-slate-300">
+              Fixed critical documentation syntax and SigLIP2 Flash Attention implementation examples for vision-language models.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800/60 flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-400">PRs #48489, #48197</span>
+            <a href="https://github.com/huggingface/transformers/pull/48489" target="_blank" class="text-emerald-400 hover:text-emerald-300 font-medium flex items-center gap-1">
+              View on GitHub ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- LangChain -->
+        <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/80 hover:border-emerald-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-bold text-lg text-white">LangChain AI</span>
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Merged</span>
+            </div>
+            <p class="text-sm text-slate-300">
+              Updated prompt customization pipelines and table mappings for Autonomous Software Engineering (open-swe) workflows.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800/60 flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-400">PR #2416</span>
+            <a href="https://github.com/langchain-ai/open-swe/pull/2416" target="_blank" class="text-emerald-400 hover:text-emerald-300 font-medium flex items-center gap-1">
+              View on GitHub ↗
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECTS -->
+  <section id="projects" class="py-20 border-t border-slate-900 bg-slate-900/20">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="mb-12">
+        <span class="text-emerald-400 font-mono text-xs uppercase tracking-wider font-semibold">Engineered Systems</span>
+        <h2 class="text-3xl font-bold text-white mt-1">Featured Projects</h2>
+        <p class="text-slate-400 text-sm mt-2">Production-grade systems built with modern architectures, containerization, and benchmarks.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- DevPilot -->
+        <div class="p-8 rounded-3xl bg-slate-900/70 border border-slate-800 hover:border-slate-700 transition-all flex flex-col justify-between relative overflow-hidden group">
+          <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none group-hover:bg-emerald-500/20 transition-all"></div>
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">AI Codebase Intelligence</span>
+              <a href="https://github.com/VimalN2005/DevPilot" target="_blank" class="text-slate-400 hover:text-white transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3">DevPilot</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+              Production-grade AI platform for GitHub codebase intelligence, RAG-powered code analysis, automated issue debugging, and PR review orchestration.
+            </p>
+            <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-400">
+              <span class="px-2 py-1 rounded bg-slate-800">Python</span>
+              <span class="px-2 py-1 rounded bg-slate-800">FastAPI</span>
+              <span class="px-2 py-1 rounded bg-slate-800">RAG</span>
+              <span class="px-2 py-1 rounded bg-slate-800">Docker</span>
+              <span class="px-2 py-1 rounded bg-slate-800">PostgreSQL</span>
+            </div>
+          </div>
+          <div class="mt-8 flex items-center gap-4">
+            <a href="https://github.com/VimalN2005/DevPilot" target="_blank" class="px-4 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-all">
+              View Repository ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- AI Agent Evaluation Platform -->
+        <div class="p-8 rounded-3xl bg-slate-900/70 border border-slate-800 hover:border-slate-700 transition-all flex flex-col justify-between relative overflow-hidden group">
+          <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none group-hover:bg-cyan-500/20 transition-all"></div>
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Evaluation & Observability</span>
+              <a href="https://github.com/VimalN2005/AI-Agent-Evaluation-Reliability-Platform" target="_blank" class="text-slate-400 hover:text-white transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3">AI Agent Evaluation & Reliability Platform</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+              Benchmarking platform for GenAI applications — automated hallucination detection, RAG retrieval quality scoring, tool-call validation, and real-time token cost & latency tracking.
+            </p>
+            <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-400">
+              <span class="px-2 py-1 rounded bg-slate-800">Streamlit</span>
+              <span class="px-2 py-1 rounded bg-slate-800">Python</span>
+              <span class="px-2 py-1 rounded bg-slate-800">Docker</span>
+              <span class="px-2 py-1 rounded bg-slate-800">Groq API</span>
+              <span class="px-2 py-1 rounded bg-slate-800">CI/CD Actions</span>
+            </div>
+          </div>
+          <div class="mt-8 flex items-center gap-4">
+            <a href="https://github.com/VimalN2005/AI-Agent-Evaluation-Reliability-Platform" target="_blank" class="px-4 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs transition-all">
+              View Repository ↗
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH STACK -->
+  <section id="skills" class="py-20 border-t border-slate-900 bg-slate-950">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="mb-12">
+        <span class="text-emerald-400 font-mono text-xs uppercase tracking-wider font-semibold">Technical Expertise</span>
+        <h2 class="text-3xl font-bold text-white mt-1">Skills & Tools</h2>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 text-sm font-medium">
+        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center gap-3">
+          <span class="text-emerald-400 font-mono">🐍</span> Python (FastAPI, Django)
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center gap-3">
+          <span class="text-cyan-400 font-mono">⚛️</span> React & TypeScript
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center gap-3">
+          <span class="text-blue-400 font-mono">🐳</span> Docker & Compose
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center gap-3">
+          <span class="text-amber-400 font-mono">🗄️</span> PostgreSQL & MySQL
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center gap-3">
+          <span class="text-red-400 font-mono">⚡</span> Redis & Task Queues
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center gap-3">
+          <span class="text-emerald-400 font-mono">🤖</span> LangChain & RAG
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center gap-3">
+          <span class="text-purple-400 font-mono">🔄</span> GitHub Actions CI/CD
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center gap-3">
+          <span class="text-teal-400 font-mono">📊</span> Streamlit & Analytics
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT & FOOTER -->
+  <footer id="contact" class="py-20 border-t border-slate-900 bg-slate-950">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-extrabold text-white mb-4">Let's Connect</h2>
+      <p class="text-slate-400 max-w-md mx-auto mb-8 text-sm">
+        Currently seeking software engineering and full-stack internships. Feel free to reach out for collaborations or opportunities!
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-4 mb-12">
+        <a href="mailto:vimalsahani2005@gmail.com" class="px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm transition-all shadow-lg shadow-emerald-500/20">
+          Email: vimalsahani2005@gmail.com
+        </a>
+        <a href="https://linkedin.com/in/vimal-sahani" target="_blank" class="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-medium text-sm border border-slate-800 transition-all">
+          LinkedIn ↗
+        </a>
+        <a href="https://github.com/VimalN2005" target="_blank" class="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-medium text-sm border border-slate-800 transition-all">
+          GitHub ↗
+        </a>
+      </div>
+
+      <div class="pt-8 border-t border-slate-900 text-xs text-slate-500 font-mono">
+        © 2026 Vimal Sahani • IIIT Bhopal • Hosted via GitHub Pages & Custom Domain
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
