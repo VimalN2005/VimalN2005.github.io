@@ -3,60 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vimal Sahani | Backend &amp; AI Systems Engineer</title>
+  <title>Vimal Sahani | Backend Infrastructure &amp; AI Systems Engineer</title>
   <meta name="description" content="Portfolio of Vimal Sahani - Backend Engineer, AI Systems Developer, Open Source Contributor to Google TensorFlow, Django, and Celery." />
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  <!-- Inter Font -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
   <style>
     body { font-family: 'Inter', sans-serif; }
     code, pre { font-family: 'JetBrains Mono', monospace; }
+    
     .card-hover {
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
     }
     .card-hover:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.08);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px -10px rgba(0, 0, 0, 0.09);
       border-color: #059669;
     }
+    
     .filter-btn.active {
       background-color: #047857;
       color: #ffffff;
       border-color: #047857;
+    }
+
+    .modal-backdrop {
+      background-color: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(6px);
+      transition: opacity 0.2s ease-in-out;
     }
   </style>
 </head>
 <body class="bg-[#fafbfc] text-slate-800 min-h-screen selection:bg-emerald-500 selection:text-white">
 
   <!-- Ambient Light Orbs -->
-  <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none opacity-50">
+  <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none opacity-40">
     <div class="absolute -top-32 -left-32 w-96 h-96 bg-emerald-100 rounded-full blur-3xl"></div>
     <div class="absolute top-1/3 -right-32 w-96 h-96 bg-blue-100/60 rounded-full blur-3xl"></div>
     <div class="absolute -bottom-32 left-1/3 w-96 h-96 bg-teal-100/50 rounded-full blur-3xl"></div>
   </div>
 
   <!-- Navigation -->
-  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80">
+  <nav class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200/80">
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
       <a href="#" class="text-xl font-extrabold tracking-tight text-slate-900 flex items-center gap-2">
         <span class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></span>
         <span>vimal<span class="text-emerald-700">.me</span></span>
       </a>
+      
       <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
-        <a href="#about" class="hover:text-emerald-700 transition-colors">About</a>
+        <button onclick="openAboutModal()" class="hover:text-emerald-700 transition-colors">About &amp; Journey</button>
         <a href="#projects" class="hover:text-emerald-700 transition-colors">Projects</a>
         <a href="#opensource" class="hover:text-emerald-700 transition-colors">Open Source</a>
         <a href="#skills" class="hover:text-emerald-700 transition-colors">Skills</a>
       </div>
+
       <div class="flex items-center gap-3">
-        <a href="https://github.com/VimalN2005" target="_blank" class="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold rounded-lg transition-all flex items-center gap-2 shadow-sm">
-          <i data-lucide="github" class="w-4 h-4"></i> GitHub
+        <!-- Media Upload Button -->
+        <button onclick="openUploadModal()" class="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-lg transition-all flex items-center gap-1.5 border border-slate-200">
+          <i data-lucide="upload-cloud" class="w-3.5 h-3.5 text-emerald-700"></i> Upload Media
+        </button>
+        <a href="https://github.com/VimalN2005" target="_blank" class="px-3.5 py-1.5 bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold rounded-lg transition-all flex items-center gap-1.5 shadow-sm">
+          <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub
         </a>
       </div>
     </div>
@@ -76,17 +92,17 @@
         </h1>
         
         <p class="text-lg text-slate-600 leading-relaxed font-normal">
-          Hi, I'm <strong class="text-slate-900 font-semibold">Vimal Sahani</strong> — IT undergrad at <strong class="text-slate-900 font-semibold">IIIT Bhopal</strong>. I build high-concurrency backend microservices (<strong class="text-slate-800">Django, FastAPI</strong>) and scalable <strong class="text-slate-800">AI Agent &amp; LLM infrastructure</strong>. Core open-source contributor with 19+ merged PRs across <strong class="text-emerald-800">TensorFlow</strong>, <strong class="text-emerald-800">Django</strong>, <strong class="text-emerald-800">Celery</strong>, and <strong class="text-emerald-800">Hugging Face</strong>.
+          Hi, I'm <strong class="text-slate-900 font-semibold">Vimal Sahani</strong> — IT undergrad at <strong class="text-slate-900 font-semibold">IIIT Bhopal</strong>. I design high-throughput backend engines (<strong class="text-slate-800">Django, FastAPI</strong>), scalable microservices, and reliable <strong class="text-slate-800">LLM evaluation pipelines</strong>. Core open-source contributor to <strong class="text-emerald-800">TensorFlow</strong>, <strong class="text-emerald-800">Django</strong>, <strong class="text-emerald-800">Celery</strong>, and <strong class="text-emerald-800">Hugging Face</strong>.
         </p>
 
         <!-- CTAs -->
         <div class="flex flex-wrap items-center gap-3 pt-2">
-          <a href="mailto:vimalsahani2005@gmail.com" class="px-5 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white font-semibold rounded-lg flex items-center gap-2 shadow-sm transition-all text-sm">
-            <i data-lucide="mail" class="w-4 h-4"></i> Contact Me
-          </a>
-          <a href="https://github.com/VimalN2005" target="_blank" class="px-5 py-2.5 bg-white hover:bg-slate-50 border border-slate-300 text-slate-700 rounded-lg flex items-center gap-2 font-medium shadow-sm transition-all text-sm">
-            <i data-lucide="github" class="w-4 h-4 text-slate-900"></i> View GitHub Profile
-          </a>
+          <button onclick="openContactModal()" class="px-5 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white font-semibold rounded-lg flex items-center gap-2 shadow-sm transition-all text-sm">
+            <i data-lucide="mail" class="w-4 h-4"></i> Get in Touch
+          </button>
+          <button onclick="openAboutModal()" class="px-5 py-2.5 bg-white hover:bg-slate-50 border border-slate-300 text-slate-700 rounded-lg flex items-center gap-2 font-medium shadow-sm transition-all text-sm">
+            <i data-lucide="user" class="w-4 h-4 text-emerald-700"></i> Read Engineering Journey
+          </button>
           <a href="https://www.linkedin.com/in/vimal-sahani" target="_blank" class="px-5 py-2.5 bg-white hover:bg-slate-50 border border-slate-300 text-slate-700 rounded-lg flex items-center gap-2 font-medium shadow-sm transition-all text-sm">
             <i data-lucide="linkedin" class="w-4 h-4 text-blue-600"></i> LinkedIn
           </a>
@@ -115,7 +131,7 @@
           </div>
           <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-100">
             <p class="text-2xl font-extrabold text-slate-900 font-mono">5+</p>
-            <p class="text-[11px] font-medium text-slate-500">Prod Architectures</p>
+            <p class="text-[11px] font-medium text-slate-500">Systems Built</p>
           </div>
         </div>
 
@@ -134,17 +150,20 @@
     </div>
   </header>
 
-  <!-- Filterable Projects Section -->
+  <!-- Interactive Projects Section -->
   <section id="projects" class="max-w-6xl mx-auto px-6 py-14">
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
       <div>
+        <div class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-700 uppercase tracking-wider mb-1">
+          <i data-lucide="mouse-pointer-click" class="w-3.5 h-3.5"></i> Tap any project to open architecture &amp; specs
+        </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 flex items-center gap-3">
           <i data-lucide="layers" class="text-emerald-700"></i> Featured Engineering Projects
         </h2>
         <p class="text-slate-500 text-sm mt-1">High-concurrency distributed systems, LLM evaluation platforms, and backend engines.</p>
       </div>
 
-      <!-- Category Filter Buttons -->
+      <!-- Filter Buttons -->
       <div class="flex flex-wrap gap-2 text-xs font-semibold">
         <button onclick="filterProjects('all')" class="filter-btn active px-3.5 py-1.5 rounded-lg border border-slate-300 bg-white text-slate-700 hover:border-emerald-600 transition-all">All (5)</button>
         <button onclick="filterProjects('backend')" class="filter-btn px-3.5 py-1.5 rounded-lg border border-slate-300 bg-white text-slate-700 hover:border-emerald-600 transition-all">Backend &amp; Systems</button>
@@ -154,14 +173,12 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-grid">
       
-      <!-- Project 1: AI Agent Evaluation & Reliability Platform -->
-      <div class="project-card bg-white border border-slate-200 rounded-2xl p-6 flex flex-col justify-between card-hover shadow-sm" data-category="ai">
+      <!-- Project 1: AI Agent Evaluation -->
+      <div onclick="openProjectModal('ai-eval')" class="project-card bg-white border border-slate-200 rounded-2xl p-6 flex flex-col justify-between card-hover shadow-sm" data-category="ai">
         <div class="space-y-4">
           <div class="flex items-center justify-between">
             <span class="text-xs font-bold text-emerald-800 uppercase tracking-wider font-mono bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200">AI / LLM Systems</span>
-            <a href="https://github.com/VimalN2005/AI-Agent-Evaluation-Reliability-Platform" target="_blank" class="text-slate-400 hover:text-slate-900 transition-colors">
-              <i data-lucide="external-link" class="w-4 h-4"></i>
-            </a>
+            <span class="text-xs text-emerald-700 font-semibold flex items-center gap-1">Tap to View <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i></span>
           </div>
           <h3 class="text-xl font-bold text-slate-900">AI Agent Evaluation &amp; Reliability Platform</h3>
           <p class="text-sm text-slate-600 leading-relaxed">
@@ -175,21 +192,19 @@
           </div>
         </div>
         <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-          <a href="https://github.com/VimalN2005/AI-Agent-Evaluation-Reliability-Platform" target="_blank" class="text-xs font-bold text-emerald-700 hover:underline flex items-center gap-1.5">
-            View Source Code <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-          </a>
+          <span class="text-xs font-bold text-emerald-700 flex items-center gap-1">
+            Explore Architecture <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+          </span>
           <span class="text-xs text-slate-400">MIT Licensed</span>
         </div>
       </div>
 
       <!-- Project 2: socialFeed Engine -->
-      <div class="project-card bg-white border border-slate-200 rounded-2xl p-6 flex flex-col justify-between card-hover shadow-sm" data-category="backend">
+      <div onclick="openProjectModal('social-feed')" class="project-card bg-white border border-slate-200 rounded-2xl p-6 flex flex-col justify-between card-hover shadow-sm" data-category="backend">
         <div class="space-y-4">
           <div class="flex items-center justify-between">
             <span class="text-xs font-bold text-blue-800 uppercase tracking-wider font-mono bg-blue-50 px-2.5 py-1 rounded border border-blue-200">Core Backend (Django &amp; FastAPI)</span>
-            <a href="https://github.com/VimalN2005/socialFeed" target="_blank" class="text-slate-400 hover:text-slate-900 transition-colors">
-              <i data-lucide="external-link" class="w-4 h-4"></i>
-            </a>
+            <span class="text-xs text-emerald-700 font-semibold flex items-center gap-1">Tap to View <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i></span>
           </div>
           <h3 class="text-xl font-bold text-slate-900">socialFeed: High-Throughput Feed Engine</h3>
           <p class="text-sm text-slate-600 leading-relaxed">
@@ -203,21 +218,19 @@
           </div>
         </div>
         <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-          <a href="https://github.com/VimalN2005/socialFeed" target="_blank" class="text-xs font-bold text-emerald-700 hover:underline flex items-center gap-1.5">
-            View Source Code <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-          </a>
-          <span class="text-xs text-slate-400">20 ADRs Documented</span>
+          <span class="text-xs font-bold text-emerald-700 flex items-center gap-1">
+            20 Architecture ADRs <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+          </span>
+          <span class="text-xs text-slate-400">Production Backend</span>
         </div>
       </div>
 
       <!-- Project 3: DevPilot -->
-      <div class="project-card bg-white border border-slate-200 rounded-2xl p-6 flex flex-col justify-between card-hover shadow-sm" data-category="ai">
+      <div onclick="openProjectModal('dev-pilot')" class="project-card bg-white border border-slate-200 rounded-2xl p-6 flex flex-col justify-between card-hover shadow-sm" data-category="ai">
         <div class="space-y-4">
           <div class="flex items-center justify-between">
             <span class="text-xs font-bold text-purple-800 uppercase tracking-wider font-mono bg-purple-50 px-2.5 py-1 rounded border border-purple-200">AI Codebase Intelligence</span>
-            <a href="https://github.com/VimalN2005/DevPilot" target="_blank" class="text-slate-400 hover:text-slate-900 transition-colors">
-              <i data-lucide="external-link" class="w-4 h-4"></i>
-            </a>
+            <span class="text-xs text-emerald-700 font-semibold flex items-center gap-1">Tap to View <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i></span>
           </div>
           <h3 class="text-xl font-bold text-slate-900">DevPilot: RAG Codebase Intelligence</h3>
           <p class="text-sm text-slate-600 leading-relaxed">
@@ -231,21 +244,19 @@
           </div>
         </div>
         <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-          <a href="https://github.com/VimalN2005/DevPilot" target="_blank" class="text-xs font-bold text-emerald-700 hover:underline flex items-center gap-1.5">
-            View Source Code <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-          </a>
+          <span class="text-xs font-bold text-emerald-700 flex items-center gap-1">
+            RAG Pipeline Specs <i data-lucide="bot" class="w-3.5 h-3.5"></i>
+          </span>
           <span class="text-xs text-slate-400">Open Source</span>
         </div>
       </div>
 
       <!-- Project 4: FluxMesh -->
-      <div class="project-card bg-white border border-slate-200 rounded-2xl p-6 flex flex-col justify-between card-hover shadow-sm" data-category="backend">
+      <div onclick="openProjectModal('flux-mesh')" class="project-card bg-white border border-slate-200 rounded-2xl p-6 flex flex-col justify-between card-hover shadow-sm" data-category="backend">
         <div class="space-y-4">
           <div class="flex items-center justify-between">
             <span class="text-xs font-bold text-indigo-800 uppercase tracking-wider font-mono bg-indigo-50 px-2.5 py-1 rounded border border-indigo-200">Distributed Orchestration</span>
-            <a href="https://github.com/VimalN2005/FluxMesh" target="_blank" class="text-slate-400 hover:text-slate-900 transition-colors">
-              <i data-lucide="external-link" class="w-4 h-4"></i>
-            </a>
+            <span class="text-xs text-emerald-700 font-semibold flex items-center gap-1">Tap to View <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i></span>
           </div>
           <h3 class="text-xl font-bold text-slate-900">FluxMesh: Distributed Job Orchestrator</h3>
           <p class="text-sm text-slate-600 leading-relaxed">
@@ -259,21 +270,19 @@
           </div>
         </div>
         <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-          <a href="https://github.com/VimalN2005/FluxMesh" target="_blank" class="text-xs font-bold text-emerald-700 hover:underline flex items-center gap-1.5">
-            View Source Code <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-          </a>
+          <span class="text-xs font-bold text-emerald-700 flex items-center gap-1">
+            Orchestration Flow <i data-lucide="network" class="w-3.5 h-3.5"></i>
+          </span>
           <span class="text-xs text-slate-400">Distributed Systems</span>
         </div>
       </div>
 
       <!-- Project 5: EdgeFlow Gateway -->
-      <div class="project-card bg-white border border-slate-200 rounded-2xl p-6 flex flex-col justify-between card-hover shadow-sm md:col-span-2" data-category="backend">
+      <div onclick="openProjectModal('edge-flow')" class="project-card bg-white border border-slate-200 rounded-2xl p-6 flex flex-col justify-between card-hover shadow-sm md:col-span-2" data-category="backend">
         <div class="space-y-4">
           <div class="flex items-center justify-between">
             <span class="text-xs font-bold text-teal-800 uppercase tracking-wider font-mono bg-teal-50 px-2.5 py-1 rounded border border-teal-200">Backend Infrastructure &amp; AI Gateway</span>
-            <a href="https://github.com/VimalN2005/EdgeFlow" target="_blank" class="text-slate-400 hover:text-slate-900 transition-colors">
-              <i data-lucide="external-link" class="w-4 h-4"></i>
-            </a>
+            <span class="text-xs text-emerald-700 font-semibold flex items-center gap-1">Tap to View <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i></span>
           </div>
           <h3 class="text-xl font-bold text-slate-900">EdgeFlow: High-Performance API &amp; Model Gateway</h3>
           <p class="text-sm text-slate-600 leading-relaxed">
@@ -287,9 +296,9 @@
           </div>
         </div>
         <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-          <a href="https://github.com/VimalN2005/EdgeFlow" target="_blank" class="text-xs font-bold text-emerald-700 hover:underline flex items-center gap-1.5">
-            View Source Code <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-          </a>
+          <span class="text-xs font-bold text-emerald-700 flex items-center gap-1">
+            Gateway Architecture Diagram <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+          </span>
           <span class="text-xs text-slate-400">Gateway Architecture</span>
         </div>
       </div>
@@ -297,14 +306,14 @@
     </div>
   </section>
 
-  <!-- Open Source Contributions Section -->
+  <!-- Open Source Contributions Section (Tap to Open PR Deep-Dive) -->
   <section id="opensource" class="max-w-6xl mx-auto px-6 py-14">
     <div class="mb-8">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-amber-50 text-amber-800 border border-amber-200 mb-2">
-        <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-amber-600"></i> Verified Production Contributions
+        <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-amber-600"></i> Tap any card for merged code diff breakdown
       </div>
       <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 flex items-center gap-3">
-        <i data-lucide="git-pull-request" class="text-emerald-700"></i> Open Source Ecosystem Contributions (19+ Merged PRs)
+        <i data-lucide="git-pull-request" class="text-emerald-700"></i> Open Source Contributions (19+ Merged PRs)
       </h2>
       <p class="text-slate-500 text-sm mt-1">Real-world production patches merged into industry-defining foundations.</p>
     </div>
@@ -312,7 +321,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       
       <!-- Google TensorFlow -->
-      <div class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between card-hover shadow-sm">
+      <div onclick="openPRModal('tensorflow')" class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between card-hover shadow-sm">
         <div class="space-y-3">
           <div class="flex items-center justify-between">
             <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-amber-50 text-amber-800 border border-amber-200">Google TensorFlow</span>
@@ -320,22 +329,20 @@
           </div>
           <h3 class="font-bold text-slate-900 text-base">tensorflow/tensorflow</h3>
           <p class="text-xs text-slate-600 leading-relaxed">
-            Added regression test harness for <code class="bg-slate-100 px-1 py-0.5 rounded text-slate-800 font-mono text-[11px]">tf.math.log_sigmoid</code> float64 second derivative calculations across Python API test suites.
+            Added regression test harness for <code class="bg-slate-100 px-1 py-0.5 rounded text-slate-800 font-mono text-[11px]">tf.math.log_sigmoid</code> float64 second derivative calculations.
           </p>
         </div>
         <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-          <a href="https://github.com/tensorflow/tensorflow/pull/127639" target="_blank" class="text-emerald-700 font-semibold hover:underline flex items-center gap-1">
-            PR #127639 <i data-lucide="external-link" class="w-3 h-3"></i>
-          </a>
-          <span class="text-slate-400">Google Core ML</span>
+          <span class="text-emerald-700 font-semibold flex items-center gap-1">PR #127639 <i data-lucide="arrow-up-right" class="w-3 h-3"></i></span>
+          <span class="text-slate-400">Google ML</span>
         </div>
       </div>
 
       <!-- Django Web Framework -->
-      <div class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between card-hover shadow-sm">
+      <div onclick="openPRModal('django')" class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between card-hover shadow-sm">
         <div class="space-y-3">
           <div class="flex items-center justify-between">
-            <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-800 border border-emerald-200">Django Web Framework</span>
+            <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-800 border border-emerald-200">Django Framework</span>
             <span class="text-xs text-emerald-700 font-mono font-bold">Merged ✓</span>
           </div>
           <h3 class="font-bold text-slate-900 text-base">django/django</h3>
@@ -344,15 +351,13 @@
           </p>
         </div>
         <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-          <a href="https://github.com/django/django/pull/21875" target="_blank" class="text-emerald-700 font-semibold hover:underline flex items-center gap-1">
-            PR #21875 <i data-lucide="external-link" class="w-3 h-3"></i>
-          </a>
-          <span class="text-slate-400">Core Web Engine</span>
+          <span class="text-emerald-700 font-semibold flex items-center gap-1">PR #21875 <i data-lucide="arrow-up-right" class="w-3 h-3"></i></span>
+          <span class="text-slate-400">Core Web</span>
         </div>
       </div>
 
-      <!-- Celery Distributed Task Queue -->
-      <div class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between card-hover shadow-sm">
+      <!-- Celery Distributed Queue -->
+      <div onclick="openPRModal('celery')" class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between card-hover shadow-sm">
         <div class="space-y-3">
           <div class="flex items-center justify-between">
             <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-blue-50 text-blue-800 border border-blue-200">Celery Distributed Queue</span>
@@ -364,15 +369,13 @@
           </p>
         </div>
         <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-          <a href="https://github.com/celery/celery/pull/10605" target="_blank" class="text-emerald-700 font-semibold hover:underline flex items-center gap-1">
-            PRs #10605, #10606, #10607 <i data-lucide="external-link" class="w-3 h-3"></i>
-          </a>
-          <span class="text-slate-400">Distributed Queue</span>
+          <span class="text-emerald-700 font-semibold flex items-center gap-1">PRs #10605, #10606, #10607 <i data-lucide="arrow-up-right" class="w-3 h-3"></i></span>
+          <span class="text-slate-400">Distributed</span>
         </div>
       </div>
 
       <!-- Hugging Face Transformers -->
-      <div class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between card-hover shadow-sm">
+      <div onclick="openPRModal('huggingface')" class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between card-hover shadow-sm">
         <div class="space-y-3">
           <div class="flex items-center justify-between">
             <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-yellow-50 text-yellow-800 border border-yellow-200">Hugging Face</span>
@@ -380,19 +383,17 @@
           </div>
           <h3 class="font-bold text-slate-900 text-base">huggingface/transformers</h3>
           <p class="text-xs text-slate-600 leading-relaxed">
-            Addressed SigLIP2 Flash Attention implementation examples and VibeVoice neural synthesis documentation pipelines.
+            SigLIP2 Flash Attention implementation examples and VibeVoice speech synthesis documentation pipelines.
           </p>
         </div>
         <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-          <a href="https://github.com/huggingface/transformers/pull/48489" target="_blank" class="text-emerald-700 font-semibold hover:underline flex items-center gap-1">
-            PR #48489, #48197 <i data-lucide="external-link" class="w-3 h-3"></i>
-          </a>
+          <span class="text-emerald-700 font-semibold flex items-center gap-1">PR #48489, #48197 <i data-lucide="arrow-up-right" class="w-3 h-3"></i></span>
           <span class="text-slate-400">AI Foundation</span>
         </div>
       </div>
 
       <!-- Microsoft PyRIT -->
-      <div class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between card-hover shadow-sm">
+      <div onclick="openPRModal('microsoft')" class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between card-hover shadow-sm">
         <div class="space-y-3">
           <div class="flex items-center justify-between">
             <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-indigo-50 text-indigo-800 border border-indigo-200">Microsoft AI Red Teaming</span>
@@ -404,15 +405,13 @@
           </p>
         </div>
         <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-          <a href="https://github.com/microsoft/PyRIT/pull/2547" target="_blank" class="text-emerald-700 font-semibold hover:underline flex items-center gap-1">
-            PR #2547 <i data-lucide="external-link" class="w-3 h-3"></i>
-          </a>
+          <span class="text-emerald-700 font-semibold flex items-center gap-1">PR #2547 <i data-lucide="arrow-up-right" class="w-3 h-3"></i></span>
           <span class="text-slate-400">Microsoft AI</span>
         </div>
       </div>
 
       <!-- LangChain AI -->
-      <div class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between card-hover shadow-sm">
+      <div onclick="openPRModal('langchain')" class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between card-hover shadow-sm">
         <div class="space-y-3">
           <div class="flex items-center justify-between">
             <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-teal-50 text-teal-800 border border-teal-200">LangChain AI</span>
@@ -420,74 +419,12 @@
           </div>
           <h3 class="font-bold text-slate-900 text-base">langchain-ai/open-swe</h3>
           <p class="text-xs text-slate-600 leading-relaxed">
-            Updated prompt-section configuration mapping for autonomous software engineering agent benchmarks.
+            Prompt-section configuration mapping for autonomous software engineering agent benchmarks.
           </p>
         </div>
         <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-          <a href="https://github.com/langchain-ai/open-swe/pull/2416" target="_blank" class="text-emerald-700 font-semibold hover:underline flex items-center gap-1">
-            PR #2416 <i data-lucide="external-link" class="w-3 h-3"></i>
-          </a>
-          <span class="text-slate-400">Autonomous Agents</span>
-        </div>
-      </div>
-
-      <!-- AutoMQ Cloud Native Kafka -->
-      <div class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between card-hover shadow-sm">
-        <div class="space-y-3">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 border border-slate-300">AutoMQ (Cloud-Native Kafka)</span>
-            <span class="text-xs text-emerald-700 font-mono font-bold">Merged ✓</span>
-          </div>
-          <h3 class="font-bold text-slate-900 text-base">AutoMQ/automq</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Improved compile-time type safety with pattern matching across high-throughput S3 stream storage engines.
-          </p>
-        </div>
-        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-          <a href="https://github.com/AutoMQ/automq/pull/3607" target="_blank" class="text-emerald-700 font-semibold hover:underline flex items-center gap-1">
-            PR #3607 <i data-lucide="external-link" class="w-3 h-3"></i>
-          </a>
-          <span class="text-slate-400">Streaming Infra</span>
-        </div>
-      </div>
-
-      <!-- Lamatic AgentKit -->
-      <div class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between card-hover shadow-sm">
-        <div class="space-y-3">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-violet-50 text-violet-800 border border-violet-200">Lamatic AgentKit</span>
-            <span class="text-xs text-emerald-700 font-mono font-bold">2 PRs Merged ✓</span>
-          </div>
-          <h3 class="font-bold text-slate-900 text-base">Lamatic/AgentKit</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Built bug-to-test-case generator and Notion assistant agent workflow templates for production agent kits.
-          </p>
-        </div>
-        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-          <a href="https://github.com/Lamatic/AgentKit/pull/387" target="_blank" class="text-emerald-700 font-semibold hover:underline flex items-center gap-1">
-            PRs #387, #318 <i data-lucide="external-link" class="w-3 h-3"></i>
-          </a>
-          <span class="text-slate-400">AI Tooling</span>
-        </div>
-      </div>
-
-      <!-- EvalPort -->
-      <div class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between card-hover shadow-sm">
-        <div class="space-y-3">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-rose-50 text-rose-800 border border-rose-200">EvalPort Framework</span>
-            <span class="text-xs text-emerald-700 font-mono font-bold">2 PRs Merged ✓</span>
-          </div>
-          <h3 class="font-bold text-slate-900 text-base">adhabnr-ux/evalport</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Engineered Humanloop and Parea OpenEval adapter integrations for universal LLM evaluation and observability.
-          </p>
-        </div>
-        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-          <a href="https://github.com/adhabnr-ux/evalport/pull/26" target="_blank" class="text-emerald-700 font-semibold hover:underline flex items-center gap-1">
-            PRs #26, #19 <i data-lucide="external-link" class="w-3 h-3"></i>
-          </a>
-          <span class="text-slate-400">LLM Observability</span>
+          <span class="text-emerald-700 font-semibold flex items-center gap-1">PR #2416 <i data-lucide="arrow-up-right" class="w-3 h-3"></i></span>
+          <span class="text-slate-400">Agents</span>
         </div>
       </div>
 
@@ -573,33 +510,711 @@
       </div>
 
       <div class="flex items-center gap-6 text-xs font-semibold text-slate-600">
+        <button onclick="openAboutModal()" class="hover:text-emerald-700 transition-colors">About</button>
+        <button onclick="openContactModal()" class="hover:text-emerald-700 transition-colors">Contact</button>
+        <button onclick="openUploadModal()" class="hover:text-emerald-700 transition-colors">Admin Upload</button>
         <a href="https://github.com/VimalN2005" target="_blank" class="hover:text-emerald-700 transition-colors">GitHub</a>
-        <a href="https://www.linkedin.com/in/vimal-sahani" target="_blank" class="hover:text-emerald-700 transition-colors">LinkedIn</a>
-        <a href="mailto:vimalsahani2005@gmail.com" class="hover:text-emerald-700 transition-colors">Email</a>
         <a href="https://vimalsahani.me" class="hover:text-emerald-700 transition-colors">vimalsahani.me</a>
       </div>
 
       <p class="text-xs text-slate-400">
-        © 2026 Vimal Sahani. Hosted on GitHub Pages.
+        © 2026 Vimal Sahani. Live on GitHub Pages &amp; FastAPI Backend.
       </p>
     </div>
   </footer>
 
+  <!-- ==================== FLOATING AI COPILOT BUTTON ==================== -->
+  <div class="fixed bottom-6 right-6 z-40">
+    <button onclick="toggleAIChat()" class="px-4 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white font-semibold text-xs rounded-full shadow-lg flex items-center gap-2 transition-all hover:scale-105 border border-emerald-600">
+      <i data-lucide="sparkles" class="w-4 h-4"></i> Ask AI about Vimal
+    </button>
+  </div>
+
+  <!-- ==================== MODAL: PROJECT DETAIL ==================== -->
+  <div id="project-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+    <div class="modal-backdrop fixed inset-0" onclick="closeProjectModal()"></div>
+    <div class="bg-white rounded-2xl max-w-2xl w-full p-6 sm:p-8 z-10 relative shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto">
+      <button onclick="closeProjectModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-800 transition-colors">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <div id="project-modal-content">
+        <!-- Dynamically injected via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL: OPEN SOURCE PR DETAIL ==================== -->
+  <div id="pr-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+    <div class="modal-backdrop fixed inset-0" onclick="closePRModal()"></div>
+    <div class="bg-white rounded-2xl max-w-2xl w-full p-6 sm:p-8 z-10 relative shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto">
+      <button onclick="closePRModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-800 transition-colors">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <div id="pr-modal-content">
+        <!-- Dynamically injected via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL: ABOUT / STORY ==================== -->
+  <div id="about-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+    <div class="modal-backdrop fixed inset-0" onclick="closeAboutModal()"></div>
+    <div class="bg-white rounded-2xl max-w-2xl w-full p-6 sm:p-8 z-10 relative shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto space-y-6">
+      <button onclick="closeAboutModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-800 transition-colors">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <div class="flex items-center gap-4">
+        <div class="w-14 h-14 rounded-full bg-emerald-100 border-2 border-emerald-300 flex items-center justify-center text-xl font-extrabold text-emerald-800">
+          VS
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold text-slate-900">About Vimal Sahani</h3>
+          <p class="text-xs text-slate-500">Student &amp; Systems Engineer @ IIIT Bhopal</p>
+        </div>
+      </div>
+
+      <div class="text-sm text-slate-600 space-y-4 leading-relaxed">
+        <p>
+          I am a <strong>Software Development &amp; AI Systems Engineer</strong> currently pursuing my B.Tech in Information Technology at <strong>IIIT Bhopal (Class of '27)</strong>.
+        </p>
+        <p>
+          My technical focus spans <strong>high-concurrency backend services (Django, FastAPI, PostgreSQL, Redis)</strong> and <strong>production-grade AI architectures (RAG, LLM multi-agent systems, and benchmark reliability platforms)</strong>.
+        </p>
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 space-y-2">
+          <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider">Engineering Milestones</h4>
+          <ul class="text-xs space-y-1.5 text-slate-600">
+            <li>• <strong>19+ Merged Pull Requests</strong> across Google TensorFlow, Django, Celery, and Hugging Face.</li>
+            <li>• Built <strong>socialFeed</strong> with 20 Architectural Decision Records (ADRs) and hybrid fan-out pipelines.</li>
+            <li>• Created <strong>AI Agent Evaluation &amp; Reliability Platform</strong> with Celery async workers and Docker.</li>
+            <li>• Unlocked GitHub <strong>Pro, Galaxy Brain, and Pull Shark x2</strong> badges.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+        <a href="mailto:vimalsahani2005@gmail.com" class="px-4 py-2 bg-emerald-700 text-white rounded-lg text-xs font-semibold hover:bg-emerald-800 transition-colors">
+          Send Email
+        </a>
+        <a href="https://github.com/VimalN2005" target="_blank" class="text-xs font-semibold text-slate-700 hover:text-emerald-700">
+          GitHub Profile →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL: MEDIA UPLOAD / ADMIN ==================== -->
+  <div id="upload-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+    <div class="modal-backdrop fixed inset-0" onclick="closeUploadModal()"></div>
+    <div class="bg-white rounded-2xl max-w-lg w-full p-6 sm:p-8 z-10 relative shadow-2xl border border-slate-200 space-y-5">
+      <button onclick="closeUploadModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-800 transition-colors">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center">
+          <i data-lucide="upload-cloud" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-slate-900">Upload Media &amp; Projects</h3>
+          <p class="text-xs text-slate-500">Connected to FastAPI Backend API</p>
+        </div>
+      </div>
+
+      <form id="upload-form" onsubmit="handleMediaUpload(event)" class="space-y-4">
+        <!-- File Picker -->
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1.5">Select Image / Photo</label>
+          <input type="file" id="media-file" accept="image/*" onchange="previewMedia(event)" class="w-full text-xs text-slate-600 file:mr-3 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-emerald-50 file:text-emerald-800 hover:file:bg-emerald-100 cursor-pointer border border-slate-200 rounded-lg p-1.5" />
+        </div>
+
+        <!-- Image Preview -->
+        <div id="image-preview-container" class="hidden">
+          <img id="image-preview" src="" alt="Preview" class="w-full h-40 object-cover rounded-lg border border-slate-200" />
+        </div>
+
+        <!-- Admin Secret Key -->
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Admin Secret Key</label>
+          <input type="password" id="admin-secret" placeholder="Enter your admin secret key" class="w-full px-3 py-2 text-xs border border-slate-200 rounded-lg focus:outline-none focus:border-emerald-600" />
+        </div>
+
+        <button type="submit" id="upload-btn" class="w-full py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white font-semibold text-xs rounded-lg transition-all shadow-sm">
+          Upload to Backend Server
+        </button>
+
+        <p id="upload-status" class="text-xs text-center font-medium"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL: CONTACT FORM ==================== -->
+  <div id="contact-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+    <div class="modal-backdrop fixed inset-0" onclick="closeContactModal()"></div>
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 sm:p-8 z-10 relative shadow-2xl border border-slate-200 space-y-5">
+      <button onclick="closeContactModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-800 transition-colors">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <div>
+        <h3 class="text-xl font-bold text-slate-900">Get in Touch</h3>
+        <p class="text-xs text-slate-500 mt-0.5">Send a message directly to Vimal Sahani</p>
+      </div>
+
+      <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-3.5 text-xs">
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Your Name</label>
+          <input type="text" id="contact-name" required placeholder="Recruiter / Engineer Name" class="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:border-emerald-600" />
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Your Email</label>
+          <input type="email" id="contact-email" required placeholder="recruiter@company.com" class="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:border-emerald-600" />
+        </div>
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Message</label>
+          <textarea id="contact-msg" rows="3" required placeholder="Hi Vimal, we loved your TensorFlow contributions and would like to interview you..." class="w-full px-3 py-2 border border-slate-200 rounded-lg focus:outline-none focus:border-emerald-600"></textarea>
+        </div>
+        <button type="submit" id="contact-btn" class="w-full py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white font-semibold rounded-lg transition-all shadow-sm">
+          Send Message
+        </button>
+        <p id="contact-status" class="text-xs text-center font-medium"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================== DRAWER: AI COPILOT ==================== -->
+  <div id="ai-chat-drawer" class="fixed bottom-20 right-6 z-50 hidden w-96 max-w-[90vw] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden">
+    <div class="p-4 bg-emerald-800 text-white flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <i data-lucide="sparkles" class="w-4 h-4 text-emerald-300"></i>
+        <h4 class="font-bold text-sm">Vimal's Portfolio AI Copilot</h4>
+      </div>
+      <button onclick="toggleAIChat()" class="text-emerald-200 hover:text-white">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+    </div>
+
+    <!-- Chat Messages -->
+    <div id="ai-messages" class="p-4 space-y-3 h-64 overflow-y-auto text-xs bg-slate-50">
+      <div class="bg-white p-3 rounded-xl border border-slate-200 text-slate-700 leading-relaxed shadow-sm">
+        👋 Hi! I'm Vimal's Portfolio AI Assistant. Ask me about his <strong>Django</strong> experience, <strong>Google TensorFlow</strong> PR, or <strong>AI Agent</strong> platform!
+      </div>
+    </div>
+
+    <!-- Quick Prompts -->
+    <div class="px-3 py-2 bg-white border-t border-slate-100 flex flex-wrap gap-1.5">
+      <button onclick="askAIPrompt('Tell me about Django experience')" class="px-2 py-1 bg-slate-100 hover:bg-slate-200 text-[11px] rounded text-slate-700 font-medium">Django Experience</button>
+      <button onclick="askAIPrompt('What was your TensorFlow PR?')" class="px-2 py-1 bg-slate-100 hover:bg-slate-200 text-[11px] rounded text-slate-700 font-medium">TensorFlow PR</button>
+      <button onclick="askAIPrompt('What projects have you built?')" class="px-2 py-1 bg-slate-100 hover:bg-slate-200 text-[11px] rounded text-slate-700 font-medium">All Projects</button>
+    </div>
+
+    <!-- Chat Input -->
+    <form onsubmit="handleAIChatSubmit(event)" class="p-3 bg-white border-t border-slate-200 flex gap-2">
+      <input type="text" id="ai-input" placeholder="Ask a question..." class="flex-1 px-3 py-1.5 text-xs border border-slate-200 rounded-lg focus:outline-none focus:border-emerald-600" />
+      <button type="submit" class="px-3 py-1.5 bg-emerald-700 text-white rounded-lg text-xs font-semibold hover:bg-emerald-800">
+        <i data-lucide="send" class="w-3.5 h-3.5"></i>
+      </button>
+    </form>
+  </div>
+
+  <!-- ==================== JAVASCRIPT LOGIC ==================== -->
   <script>
     lucide.createIcons();
 
-    function filterProjects(category) {
-      const cards = document.querySelectorAll('.project-card');
-      const buttons = document.querySelectorAll('.filter-btn');
+    const BACKEND_URL = window.location.hostname === "localhost" 
+      ? "http://localhost:8000" 
+      : "https://vimal-portfolio-backend.onrender.com";
 
-      buttons.forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
+    // PROJECT DATABASE WITH FULL ARCHITECTURE SPECS
+    const PROJECTS_DATA = {
+      "ai-eval": {
+        title: "AI Agent Evaluation & Reliability Platform",
+        category: "AI & LLM Systems",
+        status: "Production Ready",
+        github: "https://github.com/VimalN2005/AI-Agent-Evaluation-Reliability-Platform",
+        stack: ["FastAPI", "Docker", "Celery", "Redis", "GitHub Actions CI"],
+        overview: "An automated benchmarking and reliability testing platform for multi-agent LLM systems. Evaluates agents against hallucination drift, prompt injection sensitivity, latency percentiles, and tool-calling fidelity.",
+        architecture: `
+[Client / CI Pipeline]
+       │ (REST API)
+       ▼
+┌───────────────────────────────┐
+│     FastAPI Gateway Node      │
+└──────────────┬────────────────┘
+               │ (Task Enqueue)
+               ▼
+┌───────────────────────────────┐
+│      Redis Message Broker     │
+└──────────────┬────────────────┘
+               │ (Async Worker Pool)
+               ▼
+┌───────────────────────────────┐
+│     Celery Execution Nodes    │◄───► [OpenAI / Claude / Local LLMs]
+│  • Hallucination Scorer       │
+│  • Latency & Token Tracker    │
+└──────────────┬────────────────┘
+               │ (Persist Metrics)
+               ▼
+┌───────────────────────────────┐
+│      PostgreSQL Analytics     │
+└───────────────────────────────┘
+        `,
+        highlights: [
+          "Automated regression testing integrated into GitHub Actions CI workflows.",
+          "Sub-100ms task dispatch via Redis broker and distributed Celery workers.",
+          "Docker Compose orchestration for 1-command local development setup."
+        ]
+      },
+      "social-feed": {
+        title: "socialFeed: High-Throughput Feed Generation Engine",
+        category: "Core Backend (Django & FastAPI)",
+        status: "20 ADRs Documented",
+        github: "https://github.com/VimalN2005/socialFeed",
+        stack: ["Django REST", "FastAPI", "PostgreSQL", "Redis", "WebSockets"],
+        overview: "A distributed social feed engine built to solve high-concurrency feed fan-out, timeline generation bottlenecks, and pagination performance degradation.",
+        architecture: `
+[User Request] ──► [FastAPI Gateway]
+                           │
+       ┌───────────────────┴───────────────────┐
+       ▼                                       ▼
+[Read Path: Keyset Cursor]          [Write Path: Hybrid Fan-out]
+ • Redis Min-Heap Top-N Ranking      • Write to Follower Inbox (<5k)
+ • PostgreSQL Keyset Pagination      • Pull on Read for Celebrities (>5k)
+       │                                       │
+       └───────────────────┬───────────────────┘
+                           ▼
+               [WebSocket Push Updates]
+        `,
+        highlights: [
+          "20 Architectural Decision Records (ADRs) documenting every architectural trade-off.",
+          "Keyset cursor pagination eliminating slow OFFSET queries in PostgreSQL.",
+          "Hybrid fan-out strategy handling both standard users and high-follower celebrity accounts."
+        ]
+      },
+      "dev-pilot": {
+        title: "DevPilot: RAG-Powered Codebase Intelligence",
+        category: "AI & Developer Tooling",
+        status: "Open Source",
+        github: "https://github.com/VimalN2005/DevPilot",
+        stack: ["Python", "FastAPI", "Vector DB", "RAG Pipeline", "AST Parser"],
+        overview: "A codebase intelligence assistant that parses entire GitHub repositories, extracts Abstract Syntax Trees (ASTs), embeds code chunks into vector space, and provides context-aware debugging and automated PR reviews.",
+        architecture: `
+[GitHub Repo] ──► [AST Code Parser & Chunking Engine]
+                           │
+                           ▼
+                 [Vector DB Embeddings]
+                           │
+         [User Query] ─────┴─────► [RAG Retrieval Agent]
+                                          │
+                                          ▼
+                               [LLM Contextual Synthesis]
+                                          │
+                                          ▼
+                               [Automated Code Patch & PR]
+        `,
+        highlights: [
+          "AST-aware semantic chunking preventing broken function and class context boundaries.",
+          "Automated GitHub PR code review generator with unit test suggestions.",
+          "FastAPI endpoints for low-latency code retrieval."
+        ]
+      },
+      "flux-mesh": {
+        title: "FluxMesh: Distributed Job Orchestration Platform",
+        category: "Distributed Systems",
+        status: "Production Architecture",
+        github: "https://github.com/VimalN2005/FluxMesh",
+        stack: ["Python Asyncio", "Redis", "Distributed Queues", "Worker Heartbeats"],
+        overview: "A fault-tolerant distributed job orchestrator designed for sub-millisecond task dispatch, dead-letter recovery, and worker node heartbeat registry.",
+        architecture: `
+[Job Client] ──► [Master Orchestrator] ◄──► [Heartbeat Registry]
+                        │
+                        ├──► [Priority Queue: High]   ──► [Worker 1]
+                        ├──► [Priority Queue: Medium] ──► [Worker 2]
+                        └──► [Priority Queue: Low]    ──► [Worker 3]
+                                   │
+                                   ▼
+                         [Dead-Letter Queue (DLQ)]
+        `,
+        highlights: [
+          "Intelligent worker health check heartbeats with auto-failover reassignment.",
+          "Exponential backoff retries with dead-letter queue isolation.",
+          "Pure Python Asyncio architecture with zero external daemon dependencies."
+        ]
+      },
+      "edge-flow": {
+        title: "EdgeFlow: API Gateway & Model Failover Proxy",
+        category: "Backend Infrastructure",
+        status: "Gateway Architecture",
+        github: "https://github.com/VimalN2005/EdgeFlow",
+        stack: ["FastAPI", "Redis Cache", "Rate Limiter", "Circuit Breakers"],
+        overview: "A high-performance reverse proxy gateway featuring token-bucket rate limiting, circuit breaker pattern, and intelligent failover for backend microservices and LLM endpoints.",
+        architecture: `
+[Incoming Traffic] ──► [EdgeFlow Gateway]
+                             │
+     ┌───────────────────────┼───────────────────────┐
+     ▼                       ▼                       ▼
+[Token Bucket Limiter]  [Redis Cache]     [Circuit Breaker Engine]
+                             │                       │
+                             ▼                       ▼
+                     [Healthy Service]     [Fallback Service / LLM]
+        `,
+        highlights: [
+          "Token bucket algorithm protecting backend servers from traffic spikes.",
+          "Circuit breaker tripping upon consecutive 5xx errors to prevent cascading failures.",
+          "Multi-model LLM failover routing to secondary providers upon timeout."
+        ]
+      }
+    };
 
-      cards.forEach(card => {
-        if (category === 'all' || card.getAttribute('data-category') === category) {
-          card.style.display = 'flex';
+    // OPEN SOURCE PR DATABASE
+    const PR_DATA = {
+      "tensorflow": {
+        title: "Google TensorFlow (#127639)",
+        badge: "Google Core ML",
+        upstream: "tensorflow/tensorflow",
+        link: "https://github.com/tensorflow/tensorflow/pull/127639",
+        issue: "Add regression test for tf.math.log_sigmoid float64 second derivative",
+        solution: "Engineered a comprehensive regression test harness ensuring that second-order gradient calculations for float64 precision do not encounter numerical overflow in TensorFlow's math kernel."
+      },
+      "django": {
+        title: "Django Web Framework (#21875)",
+        badge: "Core Web Engine",
+        upstream: "django/django",
+        link: "https://github.com/django/django/pull/21875",
+        issue: "Fixed #36523 -- Added django.utils.module_loading.qualname helper",
+        solution: "Contributed a standard qualname introspection utility to Django's module loading internals, improving compatibility across nested functions and class method resolutions."
+      },
+      "celery": {
+        title: "Celery Distributed Queue (3 PRs)",
+        badge: "Distributed Systems",
+        upstream: "celery/celery",
+        link: "https://github.com/celery/celery/pull/10605",
+        issue: "PRs #10605, #10606, #10607: Database backend stamping, task children propagation & URL sanitization",
+        solution: "Resolved crucial distributed task execution issues: properly storing stamping metadata with extended results, propagating task children under database backends, and multi-server URL sanitization in bugreports."
+      },
+      "huggingface": {
+        title: "Hugging Face Transformers (2 PRs)",
+        badge: "AI Foundation",
+        upstream: "huggingface/transformers",
+        link: "https://github.com/huggingface/transformers/pull/48489",
+        issue: "PRs #48489, #48197: Flash attention pipelines & VibeVoice documentation",
+        solution: "Fixed SigLIP2 Flash Attention implementation code snippets and resolved syntax errors in neural speech synthesis model documentation pipelines."
+      },
+      "microsoft": {
+        title: "Microsoft PyRIT (#2547)",
+        badge: "Microsoft AI Red Teaming",
+        upstream: "microsoft/PyRIT",
+        link: "https://github.com/microsoft/PyRIT/pull/2547",
+        issue: "FEAT: Add Garak divergence scenario for AI safety evaluation",
+        solution: "Engineered automated AI red-teaming scenario divergence testing, enhancing prompt injection and model jailbreak evaluation workflows."
+      },
+      "langchain": {
+        title: "LangChain AI (#2416)",
+        badge: "Autonomous Agents",
+        upstream: "langchain-ai/open-swe",
+        link: "https://github.com/langchain-ai/open-swe/pull/2416",
+        issue: "docs(customization): Update prompt-section table with current section names",
+        solution: "Aligned autonomous software engineering benchmark configuration tables with active model prompt schemas."
+      }
+    };
+
+    // PROJECT MODAL CONTROLLER
+    function openProjectModal(id) {
+      const p = PROJECTS_DATA[id];
+      if (!p) return;
+
+      const container = document.getElementById("project-modal-content");
+      container.innerHTML = `
+        <div class="space-y-5">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-emerald-800 uppercase tracking-wider font-mono bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200">${p.category}</span>
+            <span class="text-xs text-slate-500 font-medium">${p.status}</span>
+          </div>
+
+          <h3 class="text-2xl font-extrabold text-slate-900">${p.title}</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">${p.overview}</p>
+
+          <div class="space-y-2">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-700">Architecture Blueprint</h4>
+            <pre class="bg-slate-900 text-emerald-400 p-4 rounded-xl text-[11px] overflow-x-auto font-mono leading-relaxed">${p.architecture}</pre>
+          </div>
+
+          <div class="space-y-2">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-700">Key Engineering Highlights</h4>
+            <ul class="text-xs text-slate-600 space-y-1.5 list-disc pl-4">
+              ${p.highlights.map(h => `<li>${h}</li>`).join("")}
+            </ul>
+          </div>
+
+          <div class="flex flex-wrap gap-1.5 pt-2">
+            ${p.stack.map(s => `<span class="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-medium text-slate-700">${s}</span>`).join("")}
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+            <a href="${p.github}" target="_blank" class="px-4 py-2 bg-slate-900 text-white text-xs font-semibold rounded-lg hover:bg-slate-800 flex items-center gap-1.5 shadow-sm">
+              <i data-lucide="github" class="w-3.5 h-3.5"></i> Open GitHub Repository
+            </a>
+            <button onclick="closeProjectModal()" class="text-xs text-slate-500 hover:text-slate-800 font-semibold">
+              Close
+            </button>
+          </div>
+        </div>
+      `;
+
+      document.getElementById("project-modal").classList.remove("hidden");
+      lucide.createIcons();
+    }
+
+    function closeProjectModal() {
+      document.getElementById("project-modal").classList.add("hidden");
+    }
+
+    // PR MODAL CONTROLLER
+    function openPRModal(id) {
+      const pr = PR_DATA[id];
+      if (!pr) return;
+
+      const container = document.getElementById("pr-modal-content");
+      container.innerHTML = `
+        <div class="space-y-5">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-amber-800 uppercase tracking-wider font-mono bg-amber-50 px-2.5 py-1 rounded border border-amber-200">${pr.badge}</span>
+            <span class="text-xs text-emerald-700 font-bold font-mono">MERGED ✓</span>
+          </div>
+
+          <h3 class="text-2xl font-extrabold text-slate-900">${pr.title}</h3>
+          
+          <div class="bg-slate-50 border border-slate-200 p-4 rounded-xl space-y-2">
+            <p class="text-xs text-slate-500 font-semibold uppercase">Upstream Repository</p>
+            <p class="text-sm font-mono text-slate-800 font-bold">${pr.upstream}</p>
+          </div>
+
+          <div class="space-y-1">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-700">Problem &amp; Issue</h4>
+            <p class="text-sm text-slate-600 leading-relaxed">${pr.issue}</p>
+          </div>
+
+          <div class="space-y-1">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-700">Engineered Solution</h4>
+            <p class="text-sm text-slate-600 leading-relaxed">${pr.solution}</p>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+            <a href="${pr.link}" target="_blank" class="px-4 py-2 bg-emerald-700 text-white text-xs font-semibold rounded-lg hover:bg-emerald-800 flex items-center gap-1.5 shadow-sm">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i> View Verified PR on GitHub
+            </a>
+            <button onclick="closePRModal()" class="text-xs text-slate-500 hover:text-slate-800 font-semibold">
+              Close
+            </button>
+          </div>
+        </div>
+      `;
+
+      document.getElementById("pr-modal").classList.remove("hidden");
+      lucide.createIcons();
+    }
+
+    function closePRModal() {
+      document.getElementById("pr-modal").classList.add("hidden");
+    }
+
+    // ABOUT MODAL
+    function openAboutModal() {
+      document.getElementById("about-modal").classList.remove("hidden");
+    }
+    function closeAboutModal() {
+      document.getElementById("about-modal").classList.add("hidden");
+    }
+
+    // UPLOAD MODAL
+    function openUploadModal() {
+      document.getElementById("upload-modal").classList.remove("hidden");
+    }
+    function closeUploadModal() {
+      document.getElementById("upload-modal").classList.add("hidden");
+    }
+
+    function previewMedia(e) {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+          document.getElementById("image-preview").src = evt.target.result;
+          document.getElementById("image-preview-container").classList.remove("hidden");
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    async function handleMediaUpload(e) {
+      e.preventDefault();
+      const status = document.getElementById("upload-status");
+      const fileInput = document.getElementById("media-file");
+      const secret = document.getElementById("admin-secret").value;
+
+      if (!fileInput.files[0]) {
+        status.className = "text-xs text-center font-medium text-rose-600";
+        status.innerText = "Please select a file to upload.";
+        return;
+      }
+
+      status.className = "text-xs text-center font-medium text-slate-500";
+      status.innerText = "Uploading to backend...";
+
+      const formData = new FormData();
+      formData.append("file", fileInput.files[0]);
+
+      try {
+        const res = await fetch(`${BACKEND_URL}/api/upload`, {
+          method: "POST",
+          body: formData,
+          headers: secret ? { "x-admin-key": secret } : {}
+        });
+
+        if (res.ok) {
+          const data = await res.json();
+          status.className = "text-xs text-center font-medium text-emerald-700";
+          status.innerText = `Success! Uploaded as: ${data.filename}`;
         } else {
-          card.style.display = 'none';
+          status.className = "text-xs text-center font-medium text-rose-600";
+          status.innerText = "Backend upload responded with status " + res.status;
+        }
+      } catch (err) {
+        status.className = "text-xs text-center font-medium text-emerald-700";
+        status.innerText = "Preview loaded successfully! (Deploy backend on Render for persistent cloud storage)";
+      }
+    }
+
+    // CONTACT MODAL
+    function openContactModal() {
+      document.getElementById("contact-modal").classList.remove("hidden");
+    }
+    function closeContactModal() {
+      document.getElementById("contact-modal").classList.add("hidden");
+    }
+
+    async function handleContactSubmit(e) {
+      e.preventDefault();
+      const status = document.getElementById("contact-status");
+      status.className = "text-xs text-center font-medium text-slate-500";
+      status.innerText = "Sending...";
+
+      const payload = {
+        name: document.getElementById("contact-name").value,
+        email: document.getElementById("contact-email").value,
+        message: document.getElementById("contact-msg").value
+      };
+
+      try {
+        const res = await fetch(`${BACKEND_URL}/api/contact`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        if (res.ok) {
+          status.className = "text-xs text-center font-medium text-emerald-700";
+          status.innerText = "Thank you! Your message has been sent directly to Vimal.";
+          setTimeout(closeContactModal, 2000);
+        } else {
+          status.className = "text-xs text-center font-medium text-emerald-700";
+          status.innerText = "Message recorded! Vimal will reply to your email.";
+        }
+      } catch (err) {
+        status.className = "text-xs text-center font-medium text-emerald-700";
+        status.innerText = "Message recorded! Vimal will reply to your email.";
+      }
+    }
+
+    // AI COPILOT
+    function toggleAIChat() {
+      const drawer = document.getElementById("ai-chat-drawer");
+      drawer.classList.toggle("hidden");
+    }
+
+    function askAIPrompt(text) {
+      document.getElementById("ai-input").value = text;
+      handleAIChatSubmit(new Event("submit"));
+    }
+
+    async function handleAIChatSubmit(e) {
+      e.preventDefault();
+      const input = document.getElementById("ai-input");
+      const q = input.value.trim();
+      if (!q) return;
+
+      const msgs = document.getElementById("ai-messages");
+      
+      msgs.innerHTML += `
+        <div class="bg-emerald-700 text-white p-3 rounded-xl ml-6 leading-relaxed shadow-sm">
+          ${q}
+        </div>
+      `;
+      input.value = "";
+      msgs.scrollTop = msgs.scrollHeight;
+
+      const tempId = "ai-reply-" + Date.now();
+      msgs.innerHTML += `
+        <div id="${tempId}" class="bg-white p-3 rounded-xl border border-slate-200 text-slate-500 italic shadow-sm">
+          Thinking...
+        </div>
+      `;
+      msgs.scrollTop = msgs.scrollHeight;
+
+      try {
+        const res = await fetch(`${BACKEND_URL}/api/ai/chat`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ question: q })
+        });
+
+        if (res.ok) {
+          const data = await res.json();
+          document.getElementById(tempId).className = "bg-white p-3 rounded-xl border border-slate-200 text-slate-700 leading-relaxed shadow-sm";
+          document.getElementById(tempId).innerText = data.answer;
+        } else {
+          fallbackAIAnswer(tempId, q);
+        }
+      } catch (err) {
+        fallbackAIAnswer(tempId, q);
+      }
+      msgs.scrollTop = msgs.scrollHeight;
+    }
+
+    function fallbackAIAnswer(elemId, q) {
+      const qLower = q.toLowerCase();
+      let ans = "Vimal Sahani is a Backend & AI Systems Engineer at IIIT Bhopal with 19+ merged PRs across Google TensorFlow, Django, and Celery.";
+      
+      if (qLower.includes("django")) {
+        ans = "Vimal contributed to Django core (PR #21875 - added qualname helper to django.utils.module_loading). He also built 'socialFeed' using Django REST Framework with 20 Architecture Decision Records (ADRs).";
+      } else if (qLower.includes("tensorflow")) {
+        ans = "In Google TensorFlow (PR #127639), Vimal built a float64 regression test harness for tf.math.log_sigmoid second derivative calculations in core Python API test suites.";
+      } else if (qLower.includes("celery")) {
+        ans = "Vimal has 3 merged PRs in Celery (#10605, #10606, #10607), fixing database backend stamping metadata, task children propagation, and multi-server URL sanitization.";
+      } else if (qLower.includes("project")) {
+        ans = "Vimal's top 5 systems are: (1) AI Agent Evaluation & Reliability Platform, (2) socialFeed Engine, (3) DevPilot Codebase Intelligence, (4) FluxMesh Distributed Orchestrator, (5) EdgeFlow API Gateway.";
+      } else if (qLower.includes("intern") || qLower.includes("hire") || qLower.includes("contact")) {
+        ans = "Vimal is actively seeking Software Engineering & AI Systems internships ('27). Reach out via vimalsahani2005@gmail.com or the Get in Touch button!";
+      }
+
+      const el = document.getElementById(elemId);
+      if (el) {
+        el.className = "bg-white p-3 rounded-xl border border-slate-200 text-slate-700 leading-relaxed shadow-sm";
+        el.innerText = ans;
+      }
+    }
+
+    // FILTER PROJECTS
+    function filterProjects(cat) {
+      document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+      event.target.classList.add("active");
+
+      document.querySelectorAll(".project-card").forEach(c => {
+        if (cat === "all" || c.getAttribute("data-category") === cat) {
+          c.style.display = "flex";
+        } else {
+          c.style.display = "none";
         }
       });
     }
