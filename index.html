@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vimal Sahani | SDE & AI Systems Developer</title>
-  <meta name="description" content="Portfolio of Vimal Sahani - Software Engineer, AI Systems Developer, Open Source Contributor to TensorFlow, Django, and Hugging Face." />
+  <title>Vimal Sahani | Backend &amp; AI Systems Engineer</title>
+  <meta name="description" content="Portfolio of Vimal Sahani - Backend Engineer, AI Systems Developer, Open Source Contributor to Google TensorFlow, Django, and Celery." />
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -13,42 +13,49 @@
   <!-- Inter Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Inter', sans-serif; }
     code, pre { font-family: 'JetBrains Mono', monospace; }
     .card-hover {
-      transition: all 0.2s ease-in-out;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .card-hover:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.08);
-      border-color: #10b981;
+      box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.08);
+      border-color: #059669;
+    }
+    .filter-btn.active {
+      background-color: #047857;
+      color: #ffffff;
+      border-color: #047857;
     }
   </style>
 </head>
 <body class="bg-[#fafbfc] text-slate-800 min-h-screen selection:bg-emerald-500 selection:text-white">
 
-  <!-- Subtle Ambient Glows -->
-  <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none opacity-60">
-    <div class="absolute -top-32 -left-32 w-96 h-96 bg-emerald-200/40 rounded-full blur-3xl"></div>
-    <div class="absolute top-1/3 -right-32 w-96 h-96 bg-blue-100/50 rounded-full blur-3xl"></div>
-    <div class="absolute -bottom-32 left-1/3 w-96 h-96 bg-teal-100/40 rounded-full blur-3xl"></div>
+  <!-- Ambient Light Orbs -->
+  <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none opacity-50">
+    <div class="absolute -top-32 -left-32 w-96 h-96 bg-emerald-100 rounded-full blur-3xl"></div>
+    <div class="absolute top-1/3 -right-32 w-96 h-96 bg-blue-100/60 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-32 left-1/3 w-96 h-96 bg-teal-100/50 rounded-full blur-3xl"></div>
   </div>
 
   <!-- Navigation -->
-  <nav class="sticky top-0 z-50 bg-white/85 backdrop-blur-md border-b border-slate-200/80">
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80">
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#" class="text-xl font-bold tracking-tight text-slate-900 flex items-center gap-2">
+      <a href="#" class="text-xl font-extrabold tracking-tight text-slate-900 flex items-center gap-2">
         <span class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></span>
-        <span>vimal<span class="text-emerald-600">.me</span></span>
+        <span>vimal<span class="text-emerald-700">.me</span></span>
       </a>
-      <div class="flex items-center gap-6 text-sm font-medium text-slate-600">
-        <a href="#about" class="hover:text-emerald-600 transition-colors">About</a>
-        <a href="#opensource" class="hover:text-emerald-600 transition-colors">Open Source</a>
-        <a href="#projects" class="hover:text-emerald-600 transition-colors">Projects</a>
-        <a href="#skills" class="hover:text-emerald-600 transition-colors">Skills</a>
-        <a href="https://github.com/VimalN2005" target="_blank" class="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-lg transition-all flex items-center gap-2 shadow-sm">
+      <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
+        <a href="#about" class="hover:text-emerald-700 transition-colors">About</a>
+        <a href="#projects" class="hover:text-emerald-700 transition-colors">Projects</a>
+        <a href="#opensource" class="hover:text-emerald-700 transition-colors">Open Source</a>
+        <a href="#skills" class="hover:text-emerald-700 transition-colors">Skills</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="https://github.com/VimalN2005" target="_blank" class="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold rounded-lg transition-all flex items-center gap-2 shadow-sm">
           <i data-lucide="github" class="w-4 h-4"></i> GitHub
         </a>
       </div>
@@ -56,221 +63,102 @@
   </nav>
 
   <!-- Hero Section -->
-  <header id="about" class="max-w-6xl mx-auto px-6 pt-16 pb-14">
-    <div class="flex flex-col md:flex-row md:items-center justify-between gap-10">
+  <header id="about" class="max-w-6xl mx-auto px-6 pt-16 pb-12">
+    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-10">
+      
       <div class="space-y-6 max-w-2xl">
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
-          <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Open to Software Engineering Internships
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">
+          <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Open to Backend &amp; AI Engineering Internships ('27)
         </div>
         
         <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
-          Hi, I'm <span class="text-emerald-600">Vimal Sahani</span>
+          Backend Infrastructure &amp; <span class="text-emerald-700">AI Systems</span> Engineer
         </h1>
         
         <p class="text-lg text-slate-600 leading-relaxed font-normal">
-          Software Engineer &amp; AI Systems Developer at <strong class="text-slate-900 font-semibold">IIIT Bhopal</strong>. Active open-source contributor with 19+ merged pull requests across foundational ecosystems including <strong class="text-emerald-700 font-semibold">Google TensorFlow</strong>, <strong class="text-emerald-700 font-semibold">Django</strong>, <strong class="text-emerald-700 font-semibold">Celery</strong>, and <strong class="text-emerald-700 font-semibold">Hugging Face</strong>.
+          Hi, I'm <strong class="text-slate-900 font-semibold">Vimal Sahani</strong> — IT undergrad at <strong class="text-slate-900 font-semibold">IIIT Bhopal</strong>. I build high-concurrency backend microservices (<strong class="text-slate-800">Django, FastAPI</strong>) and scalable <strong class="text-slate-800">AI Agent &amp; LLM infrastructure</strong>. Core open-source contributor with 19+ merged PRs across <strong class="text-emerald-800">TensorFlow</strong>, <strong class="text-emerald-800">Django</strong>, <strong class="text-emerald-800">Celery</strong>, and <strong class="text-emerald-800">Hugging Face</strong>.
         </p>
 
-        <!-- Social Buttons -->
+        <!-- CTAs -->
         <div class="flex flex-wrap items-center gap-3 pt-2">
-          <a href="mailto:vimalsahani2005@gmail.com" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg flex items-center gap-2 shadow-sm transition-all">
-            <i data-lucide="mail" class="w-4 h-4"></i> Get in Touch
+          <a href="mailto:vimalsahani2005@gmail.com" class="px-5 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white font-semibold rounded-lg flex items-center gap-2 shadow-sm transition-all text-sm">
+            <i data-lucide="mail" class="w-4 h-4"></i> Contact Me
           </a>
-          <a href="https://github.com/VimalN2005" target="_blank" class="px-5 py-2.5 bg-white hover:bg-slate-50 border border-slate-300 text-slate-700 rounded-lg flex items-center gap-2 font-medium shadow-sm transition-all">
-            <i data-lucide="github" class="w-4 h-4 text-slate-800"></i> @VimalN2005
+          <a href="https://github.com/VimalN2005" target="_blank" class="px-5 py-2.5 bg-white hover:bg-slate-50 border border-slate-300 text-slate-700 rounded-lg flex items-center gap-2 font-medium shadow-sm transition-all text-sm">
+            <i data-lucide="github" class="w-4 h-4 text-slate-900"></i> View GitHub Profile
           </a>
-          <a href="https://www.linkedin.com/in/vimal-sahani" target="_blank" class="px-5 py-2.5 bg-white hover:bg-slate-50 border border-slate-300 text-slate-700 rounded-lg flex items-center gap-2 font-medium shadow-sm transition-all">
+          <a href="https://www.linkedin.com/in/vimal-sahani" target="_blank" class="px-5 py-2.5 bg-white hover:bg-slate-50 border border-slate-300 text-slate-700 rounded-lg flex items-center gap-2 font-medium shadow-sm transition-all text-sm">
             <i data-lucide="linkedin" class="w-4 h-4 text-blue-600"></i> LinkedIn
           </a>
         </div>
       </div>
 
-      <!-- Profile Summary Card -->
-      <div class="bg-white border border-slate-200 rounded-2xl p-6 w-full md:w-80 space-y-5 shadow-sm">
+      <!-- Quick Metrics & Badges Card -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 w-full lg:w-88 space-y-5 shadow-sm">
         <div class="flex items-center gap-4">
-          <div class="w-16 h-16 rounded-full bg-emerald-100 border-2 border-emerald-300 flex items-center justify-center text-xl font-bold text-emerald-700">
+          <div class="w-16 h-16 rounded-full bg-emerald-100 border-2 border-emerald-300 flex items-center justify-center text-xl font-extrabold text-emerald-800">
             VS
           </div>
           <div>
             <h3 class="font-bold text-slate-900 text-lg">Vimal Sahani</h3>
-            <p class="text-xs text-slate-500">@VimalN2005</p>
-            <span class="inline-block mt-1 px-2.5 py-0.5 text-[11px] font-semibold bg-emerald-100 text-emerald-800 rounded border border-emerald-300">
+            <p class="text-xs text-slate-500">IIIT Bhopal (B.Tech IT '27)</p>
+            <span class="inline-block mt-1 px-2.5 py-0.5 text-[11px] font-bold bg-emerald-100 text-emerald-800 rounded border border-emerald-300">
               GitHub Pro 🎓
             </span>
           </div>
         </div>
 
-        <div class="border-t border-slate-100 pt-4 space-y-2.5 text-xs">
-          <div class="flex justify-between text-slate-500">
-            <span>Merged PRs</span>
-            <span class="text-slate-900 font-mono font-bold">19+</span>
+        <div class="border-t border-slate-100 pt-4 grid grid-cols-2 gap-3 text-center">
+          <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-100">
+            <p class="text-2xl font-extrabold text-emerald-700 font-mono">19+</p>
+            <p class="text-[11px] font-medium text-slate-500">Merged PRs</p>
           </div>
-          <div class="flex justify-between text-slate-500">
-            <span>Pull Shark Tier</span>
-            <span class="text-emerald-700 font-mono font-bold">Bronze (x2) 🦈</span>
-          </div>
-          <div class="flex justify-between text-slate-500">
-            <span>Institution</span>
-            <span class="text-slate-900 font-semibold">IIIT Bhopal</span>
-          </div>
-          <div class="flex justify-between text-slate-500">
-            <span>Location</span>
-            <span class="text-slate-900 font-medium">India 🇮🇳</span>
+          <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-100">
+            <p class="text-2xl font-extrabold text-slate-900 font-mono">5+</p>
+            <p class="text-[11px] font-medium text-slate-500">Prod Architectures</p>
           </div>
         </div>
 
         <div class="border-t border-slate-100 pt-4">
           <p class="text-[11px] text-slate-500 font-semibold mb-2 uppercase tracking-wider">GitHub Achievements</p>
           <div class="flex flex-wrap gap-1.5">
-            <span class="px-2 py-1 bg-slate-50 border border-slate-200 rounded text-xs font-medium text-slate-700" title="Galaxy Brain">🧠 Galaxy Brain</span>
-            <span class="px-2 py-1 bg-slate-50 border border-slate-200 rounded text-xs font-medium text-slate-700" title="Pull Shark x2">🦈 Pull Shark x2</span>
-            <span class="px-2 py-1 bg-slate-50 border border-slate-200 rounded text-xs font-medium text-slate-700" title="Quickdraw">🤠 Quickdraw</span>
-            <span class="px-2 py-1 bg-slate-50 border border-slate-200 rounded text-xs font-medium text-slate-700" title="Pair Extraordinaire">🫛 Pair</span>
-            <span class="px-2 py-1 bg-slate-50 border border-slate-200 rounded text-xs font-medium text-slate-700" title="YOLO">🪩 YOLO</span>
+            <span class="px-2 py-1 bg-slate-50 border border-slate-200 rounded text-xs font-semibold text-slate-700" title="Galaxy Brain">🧠 Galaxy Brain</span>
+            <span class="px-2 py-1 bg-slate-50 border border-slate-200 rounded text-xs font-semibold text-slate-700" title="Pull Shark x2">🦈 Pull Shark x2</span>
+            <span class="px-2 py-1 bg-slate-50 border border-slate-200 rounded text-xs font-semibold text-slate-700" title="Pair Extraordinaire">🫛 Pair</span>
+            <span class="px-2 py-1 bg-slate-50 border border-slate-200 rounded text-xs font-semibold text-slate-700" title="Quickdraw">🤠 Quickdraw</span>
+            <span class="px-2 py-1 bg-slate-50 border border-slate-200 rounded text-xs font-semibold text-slate-700" title="YOLO">🪩 YOLO</span>
           </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- Open Source Contributions Section -->
-  <section id="opensource" class="max-w-6xl mx-auto px-6 py-14">
-    <div class="mb-8">
-      <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 flex items-center gap-3">
-        <i data-lucide="git-pull-request" class="text-emerald-600"></i> Open Source Contributions
-      </h2>
-      <p class="text-slate-500 text-sm mt-1">Real-world production contributions merged into foundational engineering ecosystems.</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      
-      <!-- TensorFlow -->
-      <div class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between card-hover shadow-sm">
-        <div class="space-y-3">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-amber-50 text-amber-800 border border-amber-200">Google TensorFlow</span>
-            <span class="text-xs text-emerald-700 font-mono font-bold">Merged ✓</span>
-          </div>
-          <h3 class="font-bold text-slate-900 text-base">tensorflow/tensorflow</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Resolved core framework type-checking and build optimizations across TensorFlow Python API test suites.
-          </p>
-        </div>
-        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-          <span>PR #127639</span>
-          <span class="text-emerald-600 flex items-center gap-1 font-semibold">Verified <i data-lucide="check" class="w-3.5 h-3.5"></i></span>
-        </div>
-      </div>
-
-      <!-- Django -->
-      <div class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between card-hover shadow-sm">
-        <div class="space-y-3">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-800 border border-emerald-200">Django Web Framework</span>
-            <span class="text-xs text-emerald-700 font-mono font-bold">Merged ✓</span>
-          </div>
-          <h3 class="font-bold text-slate-900 text-base">django/django</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Contributed to the Django test harness and core utility routines used by millions of production Python apps.
-          </p>
-        </div>
-        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-          <span>PR #21875</span>
-          <span class="text-emerald-600 flex items-center gap-1 font-semibold">Verified <i data-lucide="check" class="w-3.5 h-3.5"></i></span>
-        </div>
-      </div>
-
-      <!-- Celery -->
-      <div class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between card-hover shadow-sm">
-        <div class="space-y-3">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-blue-50 text-blue-800 border border-blue-200">Distributed Systems</span>
-            <span class="text-xs text-emerald-700 font-mono font-bold">3 Merged ✓</span>
-          </div>
-          <h3 class="font-bold text-slate-900 text-base">celery/celery</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Fixed distributed task broker serialization handlers and concurrency edge cases across worker queues.
-          </p>
-        </div>
-        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-          <span>PR #10605, #10606, #10607</span>
-          <span class="text-emerald-600 flex items-center gap-1 font-semibold">Verified <i data-lucide="check" class="w-3.5 h-3.5"></i></span>
-        </div>
-      </div>
-
-      <!-- Hugging Face -->
-      <div class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between card-hover shadow-sm">
-        <div class="space-y-3">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-yellow-50 text-yellow-800 border border-yellow-200">Hugging Face</span>
-            <span class="text-xs text-emerald-700 font-mono font-bold">Merged ✓</span>
-          </div>
-          <h3 class="font-bold text-slate-900 text-base">huggingface/transformers</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Model pipeline validation improvements and tokenizer serialization fixes for modern transformer architectures.
-          </p>
-        </div>
-        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-          <span>PR #48489, #48197</span>
-          <span class="text-emerald-600 flex items-center gap-1 font-semibold">Verified <i data-lucide="check" class="w-3.5 h-3.5"></i></span>
-        </div>
-      </div>
-
-      <!-- Microsoft PyRIT -->
-      <div class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between card-hover shadow-sm">
-        <div class="space-y-3">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-indigo-50 text-indigo-800 border border-indigo-200">Microsoft AI Red Teaming</span>
-            <span class="text-xs text-emerald-700 font-mono font-bold">Merged ✓</span>
-          </div>
-          <h3 class="font-bold text-slate-900 text-base">microsoft/PyRIT</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Enhanced automated AI red-teaming orchestrator evaluation scripts and target endpoint connector reliability.
-          </p>
-        </div>
-        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-          <span>PR #2547</span>
-          <span class="text-emerald-600 flex items-center gap-1 font-semibold">Verified <i data-lucide="check" class="w-3.5 h-3.5"></i></span>
-        </div>
-      </div>
-
-      <!-- LangChain -->
-      <div class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between card-hover shadow-sm">
-        <div class="space-y-3">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-teal-50 text-teal-800 border border-teal-200">LangChain AI</span>
-            <span class="text-xs text-emerald-700 font-mono font-bold">Merged ✓</span>
-          </div>
-          <h3 class="font-bold text-slate-900 text-base">langchain-ai/open-swe</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Autonomous software engineering benchmark workflow integration and code patch validation logic.
-          </p>
-        </div>
-        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-          <span>PR #2416</span>
-          <span class="text-emerald-600 flex items-center gap-1 font-semibold">Verified <i data-lucide="check" class="w-3.5 h-3.5"></i></span>
         </div>
       </div>
 
     </div>
-  </section>
+  </header>
 
-  <!-- Featured Projects Section -->
+  <!-- Filterable Projects Section -->
   <section id="projects" class="max-w-6xl mx-auto px-6 py-14">
-    <div class="mb-8">
-      <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 flex items-center gap-3">
-        <i data-lucide="layers" class="text-emerald-600"></i> Featured Engineering Projects
-      </h2>
-      <p class="text-slate-500 text-sm mt-1">High-performance production systems, autonomous AI agents, and developer tooling.</p>
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 flex items-center gap-3">
+          <i data-lucide="layers" class="text-emerald-700"></i> Featured Engineering Projects
+        </h2>
+        <p class="text-slate-500 text-sm mt-1">High-concurrency distributed systems, LLM evaluation platforms, and backend engines.</p>
+      </div>
+
+      <!-- Category Filter Buttons -->
+      <div class="flex flex-wrap gap-2 text-xs font-semibold">
+        <button onclick="filterProjects('all')" class="filter-btn active px-3.5 py-1.5 rounded-lg border border-slate-300 bg-white text-slate-700 hover:border-emerald-600 transition-all">All (5)</button>
+        <button onclick="filterProjects('backend')" class="filter-btn px-3.5 py-1.5 rounded-lg border border-slate-300 bg-white text-slate-700 hover:border-emerald-600 transition-all">Backend &amp; Systems</button>
+        <button onclick="filterProjects('ai')" class="filter-btn px-3.5 py-1.5 rounded-lg border border-slate-300 bg-white text-slate-700 hover:border-emerald-600 transition-all">AI &amp; LLM Engineering</button>
+      </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-grid">
       
-      <!-- Project 1 -->
-      <div class="bg-white border border-slate-200 rounded-2xl p-6 flex flex-col justify-between card-hover shadow-sm">
+      <!-- Project 1: AI Agent Evaluation & Reliability Platform -->
+      <div class="project-card bg-white border border-slate-200 rounded-2xl p-6 flex flex-col justify-between card-hover shadow-sm" data-category="ai">
         <div class="space-y-4">
           <div class="flex items-center justify-between">
-            <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider font-mono">Full-Stack AI Platform</span>
+            <span class="text-xs font-bold text-emerald-800 uppercase tracking-wider font-mono bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200">AI / LLM Systems</span>
             <a href="https://github.com/VimalN2005/AI-Agent-Evaluation-Reliability-Platform" target="_blank" class="text-slate-400 hover:text-slate-900 transition-colors">
               <i data-lucide="external-link" class="w-4 h-4"></i>
             </a>
@@ -287,38 +175,319 @@
           </div>
         </div>
         <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-          <a href="https://github.com/VimalN2005/AI-Agent-Evaluation-Reliability-Platform" target="_blank" class="text-xs font-bold text-emerald-600 hover:text-emerald-700 flex items-center gap-1.5">
+          <a href="https://github.com/VimalN2005/AI-Agent-Evaluation-Reliability-Platform" target="_blank" class="text-xs font-bold text-emerald-700 hover:underline flex items-center gap-1.5">
             View Source Code <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
           </a>
           <span class="text-xs text-slate-400">MIT Licensed</span>
         </div>
       </div>
 
-      <!-- Project 2 -->
-      <div class="bg-white border border-slate-200 rounded-2xl p-6 flex flex-col justify-between card-hover shadow-sm">
+      <!-- Project 2: socialFeed Engine -->
+      <div class="project-card bg-white border border-slate-200 rounded-2xl p-6 flex flex-col justify-between card-hover shadow-sm" data-category="backend">
         <div class="space-y-4">
           <div class="flex items-center justify-between">
-            <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider font-mono">Developer Infrastructure</span>
-            <a href="https://github.com/VimalN2005" target="_blank" class="text-slate-400 hover:text-slate-900 transition-colors">
+            <span class="text-xs font-bold text-blue-800 uppercase tracking-wider font-mono bg-blue-50 px-2.5 py-1 rounded border border-blue-200">Core Backend (Django &amp; FastAPI)</span>
+            <a href="https://github.com/VimalN2005/socialFeed" target="_blank" class="text-slate-400 hover:text-slate-900 transition-colors">
               <i data-lucide="external-link" class="w-4 h-4"></i>
             </a>
           </div>
-          <h3 class="text-xl font-bold text-slate-900">Distributed Task Queue &amp; Data Pipeline</h3>
+          <h3 class="text-xl font-bold text-slate-900">socialFeed: High-Throughput Feed Engine</h3>
           <p class="text-sm text-slate-600 leading-relaxed">
-            High-throughput event ingestion and distributed worker orchestration system designed for sub-millisecond task dispatch, dead-letter retries, and real-time observability telemetry across asynchronous nodes.
+            Distributed feed generation engine built with Django REST Framework and FastAPI. Engineered with hybrid fan-out on write/read, keyset cursor pagination for zero offset skips, Min-Heap ranking, Redis caching, and documented with 20 Architectural Decision Records (ADRs).
           </p>
           <div class="flex flex-wrap gap-2 pt-2">
-            <span class="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-medium text-slate-700">Python 3.12</span>
-            <span class="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-medium text-slate-700">Asyncio</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-medium text-slate-700">Django REST</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-medium text-slate-700">FastAPI</span>
             <span class="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-medium text-slate-700">PostgreSQL</span>
-            <span class="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-medium text-slate-700">Distributed Systems</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-medium text-slate-700">Redis &amp; WebSockets</span>
           </div>
         </div>
         <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-          <a href="https://github.com/VimalN2005" target="_blank" class="text-xs font-bold text-emerald-600 hover:text-emerald-700 flex items-center gap-1.5">
-            View on GitHub <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          <a href="https://github.com/VimalN2005/socialFeed" target="_blank" class="text-xs font-bold text-emerald-700 hover:underline flex items-center gap-1.5">
+            View Source Code <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+          <span class="text-xs text-slate-400">20 ADRs Documented</span>
+        </div>
+      </div>
+
+      <!-- Project 3: DevPilot -->
+      <div class="project-card bg-white border border-slate-200 rounded-2xl p-6 flex flex-col justify-between card-hover shadow-sm" data-category="ai">
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-purple-800 uppercase tracking-wider font-mono bg-purple-50 px-2.5 py-1 rounded border border-purple-200">AI Codebase Intelligence</span>
+            <a href="https://github.com/VimalN2005/DevPilot" target="_blank" class="text-slate-400 hover:text-slate-900 transition-colors">
+              <i data-lucide="external-link" class="w-4 h-4"></i>
+            </a>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900">DevPilot: RAG Codebase Intelligence</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Production-grade developer intelligence platform for GitHub codebases. Integrates AST parsing, RAG-powered vector search across repositories, automated issue debugging, and contextual pull request reviews with LLMs.
+          </p>
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-medium text-slate-700">Python</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-medium text-slate-700">RAG &amp; Vector DB</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-medium text-slate-700">LLM Orchestration</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-medium text-slate-700">FastAPI</span>
+          </div>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+          <a href="https://github.com/VimalN2005/DevPilot" target="_blank" class="text-xs font-bold text-emerald-700 hover:underline flex items-center gap-1.5">
+            View Source Code <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
           </a>
           <span class="text-xs text-slate-400">Open Source</span>
+        </div>
+      </div>
+
+      <!-- Project 4: FluxMesh -->
+      <div class="project-card bg-white border border-slate-200 rounded-2xl p-6 flex flex-col justify-between card-hover shadow-sm" data-category="backend">
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-indigo-800 uppercase tracking-wider font-mono bg-indigo-50 px-2.5 py-1 rounded border border-indigo-200">Distributed Orchestration</span>
+            <a href="https://github.com/VimalN2005/FluxMesh" target="_blank" class="text-slate-400 hover:text-slate-900 transition-colors">
+              <i data-lucide="external-link" class="w-4 h-4"></i>
+            </a>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900">FluxMesh: Distributed Job Orchestrator</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Distributed task and job orchestration platform with intelligent scheduling, exponential backoff retries, multi-tier task priorities, worker node heartbeat coordination, and fault-tolerant state recovery.
+          </p>
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-medium text-slate-700">Python Asyncio</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-medium text-slate-700">Distributed Queues</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-medium text-slate-700">Worker Heartbeat</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-medium text-slate-700">Redis</span>
+          </div>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+          <a href="https://github.com/VimalN2005/FluxMesh" target="_blank" class="text-xs font-bold text-emerald-700 hover:underline flex items-center gap-1.5">
+            View Source Code <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+          <span class="text-xs text-slate-400">Distributed Systems</span>
+        </div>
+      </div>
+
+      <!-- Project 5: EdgeFlow Gateway -->
+      <div class="project-card bg-white border border-slate-200 rounded-2xl p-6 flex flex-col justify-between card-hover shadow-sm md:col-span-2" data-category="backend">
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-teal-800 uppercase tracking-wider font-mono bg-teal-50 px-2.5 py-1 rounded border border-teal-200">Backend Infrastructure &amp; AI Gateway</span>
+            <a href="https://github.com/VimalN2005/EdgeFlow" target="_blank" class="text-slate-400 hover:text-slate-900 transition-colors">
+              <i data-lucide="external-link" class="w-4 h-4"></i>
+            </a>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900">EdgeFlow: High-Performance API &amp; Model Gateway</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Low-latency API reverse-proxy gateway engineered for intelligent request routing, token bucket rate limiting, distributed caching, circuit breaker retries, and automated service &amp; LLM model failover across backend nodes.
+          </p>
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-medium text-slate-700">FastAPI</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-medium text-slate-700">Rate Limiting</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-medium text-slate-700">Circuit Breakers</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-medium text-slate-700">Redis Cache</span>
+          </div>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+          <a href="https://github.com/VimalN2005/EdgeFlow" target="_blank" class="text-xs font-bold text-emerald-700 hover:underline flex items-center gap-1.5">
+            View Source Code <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+          <span class="text-xs text-slate-400">Gateway Architecture</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Open Source Contributions Section -->
+  <section id="opensource" class="max-w-6xl mx-auto px-6 py-14">
+    <div class="mb-8">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-amber-50 text-amber-800 border border-amber-200 mb-2">
+        <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-amber-600"></i> Verified Production Contributions
+      </div>
+      <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 flex items-center gap-3">
+        <i data-lucide="git-pull-request" class="text-emerald-700"></i> Open Source Ecosystem Contributions (19+ Merged PRs)
+      </h2>
+      <p class="text-slate-500 text-sm mt-1">Real-world production patches merged into industry-defining foundations.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <!-- Google TensorFlow -->
+      <div class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between card-hover shadow-sm">
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-amber-50 text-amber-800 border border-amber-200">Google TensorFlow</span>
+            <span class="text-xs text-emerald-700 font-mono font-bold">Merged ✓</span>
+          </div>
+          <h3 class="font-bold text-slate-900 text-base">tensorflow/tensorflow</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Added regression test harness for <code class="bg-slate-100 px-1 py-0.5 rounded text-slate-800 font-mono text-[11px]">tf.math.log_sigmoid</code> float64 second derivative calculations across Python API test suites.
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+          <a href="https://github.com/tensorflow/tensorflow/pull/127639" target="_blank" class="text-emerald-700 font-semibold hover:underline flex items-center gap-1">
+            PR #127639 <i data-lucide="external-link" class="w-3 h-3"></i>
+          </a>
+          <span class="text-slate-400">Google Core ML</span>
+        </div>
+      </div>
+
+      <!-- Django Web Framework -->
+      <div class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between card-hover shadow-sm">
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-800 border border-emerald-200">Django Web Framework</span>
+            <span class="text-xs text-emerald-700 font-mono font-bold">Merged ✓</span>
+          </div>
+          <h3 class="font-bold text-slate-900 text-base">django/django</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Fixed #36523: Contributed <code class="bg-slate-100 px-1 py-0.5 rounded text-slate-800 font-mono text-[11px]">django.utils.module_loading.qualname</code> helper to the core Django utility engine.
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+          <a href="https://github.com/django/django/pull/21875" target="_blank" class="text-emerald-700 font-semibold hover:underline flex items-center gap-1">
+            PR #21875 <i data-lucide="external-link" class="w-3 h-3"></i>
+          </a>
+          <span class="text-slate-400">Core Web Engine</span>
+        </div>
+      </div>
+
+      <!-- Celery Distributed Task Queue -->
+      <div class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between card-hover shadow-sm">
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-blue-50 text-blue-800 border border-blue-200">Celery Distributed Queue</span>
+            <span class="text-xs text-emerald-700 font-mono font-bold">3 PRs Merged ✓</span>
+          </div>
+          <h3 class="font-bold text-slate-900 text-base">celery/celery</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Fixed database result backend stamping metadata, task children propagation (#8336), and multi-server URL sanitization in bug reports (#8014).
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+          <a href="https://github.com/celery/celery/pull/10605" target="_blank" class="text-emerald-700 font-semibold hover:underline flex items-center gap-1">
+            PRs #10605, #10606, #10607 <i data-lucide="external-link" class="w-3 h-3"></i>
+          </a>
+          <span class="text-slate-400">Distributed Queue</span>
+        </div>
+      </div>
+
+      <!-- Hugging Face Transformers -->
+      <div class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between card-hover shadow-sm">
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-yellow-50 text-yellow-800 border border-yellow-200">Hugging Face</span>
+            <span class="text-xs text-emerald-700 font-mono font-bold">2 PRs Merged ✓</span>
+          </div>
+          <h3 class="font-bold text-slate-900 text-base">huggingface/transformers</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Addressed SigLIP2 Flash Attention implementation examples and VibeVoice neural synthesis documentation pipelines.
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+          <a href="https://github.com/huggingface/transformers/pull/48489" target="_blank" class="text-emerald-700 font-semibold hover:underline flex items-center gap-1">
+            PR #48489, #48197 <i data-lucide="external-link" class="w-3 h-3"></i>
+          </a>
+          <span class="text-slate-400">AI Foundation</span>
+        </div>
+      </div>
+
+      <!-- Microsoft PyRIT -->
+      <div class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between card-hover shadow-sm">
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-indigo-50 text-indigo-800 border border-indigo-200">Microsoft AI Red Teaming</span>
+            <span class="text-xs text-emerald-700 font-mono font-bold">Merged ✓</span>
+          </div>
+          <h3 class="font-bold text-slate-900 text-base">microsoft/PyRIT</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Engineered Garak divergence scenario for automated AI safety testing and red-teaming orchestrator evaluation suites.
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+          <a href="https://github.com/microsoft/PyRIT/pull/2547" target="_blank" class="text-emerald-700 font-semibold hover:underline flex items-center gap-1">
+            PR #2547 <i data-lucide="external-link" class="w-3 h-3"></i>
+          </a>
+          <span class="text-slate-400">Microsoft AI</span>
+        </div>
+      </div>
+
+      <!-- LangChain AI -->
+      <div class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between card-hover shadow-sm">
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-teal-50 text-teal-800 border border-teal-200">LangChain AI</span>
+            <span class="text-xs text-emerald-700 font-mono font-bold">Merged ✓</span>
+          </div>
+          <h3 class="font-bold text-slate-900 text-base">langchain-ai/open-swe</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Updated prompt-section configuration mapping for autonomous software engineering agent benchmarks.
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+          <a href="https://github.com/langchain-ai/open-swe/pull/2416" target="_blank" class="text-emerald-700 font-semibold hover:underline flex items-center gap-1">
+            PR #2416 <i data-lucide="external-link" class="w-3 h-3"></i>
+          </a>
+          <span class="text-slate-400">Autonomous Agents</span>
+        </div>
+      </div>
+
+      <!-- AutoMQ Cloud Native Kafka -->
+      <div class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between card-hover shadow-sm">
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 border border-slate-300">AutoMQ (Cloud-Native Kafka)</span>
+            <span class="text-xs text-emerald-700 font-mono font-bold">Merged ✓</span>
+          </div>
+          <h3 class="font-bold text-slate-900 text-base">AutoMQ/automq</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Improved compile-time type safety with pattern matching across high-throughput S3 stream storage engines.
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+          <a href="https://github.com/AutoMQ/automq/pull/3607" target="_blank" class="text-emerald-700 font-semibold hover:underline flex items-center gap-1">
+            PR #3607 <i data-lucide="external-link" class="w-3 h-3"></i>
+          </a>
+          <span class="text-slate-400">Streaming Infra</span>
+        </div>
+      </div>
+
+      <!-- Lamatic AgentKit -->
+      <div class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between card-hover shadow-sm">
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-violet-50 text-violet-800 border border-violet-200">Lamatic AgentKit</span>
+            <span class="text-xs text-emerald-700 font-mono font-bold">2 PRs Merged ✓</span>
+          </div>
+          <h3 class="font-bold text-slate-900 text-base">Lamatic/AgentKit</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Built bug-to-test-case generator and Notion assistant agent workflow templates for production agent kits.
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+          <a href="https://github.com/Lamatic/AgentKit/pull/387" target="_blank" class="text-emerald-700 font-semibold hover:underline flex items-center gap-1">
+            PRs #387, #318 <i data-lucide="external-link" class="w-3 h-3"></i>
+          </a>
+          <span class="text-slate-400">AI Tooling</span>
+        </div>
+      </div>
+
+      <!-- EvalPort -->
+      <div class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between card-hover shadow-sm">
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-rose-50 text-rose-800 border border-rose-200">EvalPort Framework</span>
+            <span class="text-xs text-emerald-700 font-mono font-bold">2 PRs Merged ✓</span>
+          </div>
+          <h3 class="font-bold text-slate-900 text-base">adhabnr-ux/evalport</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Engineered Humanloop and Parea OpenEval adapter integrations for universal LLM evaluation and observability.
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+          <a href="https://github.com/adhabnr-ux/evalport/pull/26" target="_blank" class="text-emerald-700 font-semibold hover:underline flex items-center gap-1">
+            PRs #26, #19 <i data-lucide="external-link" class="w-3 h-3"></i>
+          </a>
+          <span class="text-slate-400">LLM Observability</span>
         </div>
       </div>
 
@@ -328,66 +497,66 @@
   <!-- Technical Skills Section -->
   <section id="skills" class="max-w-6xl mx-auto px-6 py-14">
     <div class="mb-8">
-      <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 flex items-center gap-3">
-        <i data-lucide="cpu" class="text-emerald-600"></i> Technical Expertise
+      <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 flex items-center gap-3">
+        <i data-lucide="cpu" class="text-emerald-700"></i> Technical Expertise &amp; Stack
       </h2>
-      <p class="text-slate-500 text-sm mt-1">Core languages, engineering frameworks, and architectural proficiencies.</p>
+      <p class="text-slate-500 text-sm mt-1">Core languages, backend frameworks, and AI systems competencies.</p>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       
       <div class="bg-white border border-slate-200 rounded-xl p-5 space-y-3 card-hover shadow-sm">
-        <div class="w-9 h-9 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center">
+        <div class="w-9 h-9 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center">
           <i data-lucide="code" class="w-5 h-5"></i>
         </div>
         <h4 class="font-bold text-slate-900 text-base">Languages</h4>
         <ul class="text-xs text-slate-600 space-y-1.5 font-medium">
-          <li>• Python (Advanced)</li>
+          <li>• Python 3.12 (Advanced)</li>
           <li>• C / C++</li>
-          <li>• JavaScript / TypeScript</li>
-          <li>• SQL (PostgreSQL)</li>
+          <li>• SQL (PostgreSQL, MySQL)</li>
+          <li>• TypeScript / JavaScript</li>
           <li>• Bash / Shell</li>
         </ul>
       </div>
 
       <div class="bg-white border border-slate-200 rounded-xl p-5 space-y-3 card-hover shadow-sm">
-        <div class="w-9 h-9 rounded-lg bg-teal-100 text-teal-700 flex items-center justify-center">
+        <div class="w-9 h-9 rounded-lg bg-teal-100 text-teal-800 flex items-center justify-center">
           <i data-lucide="server" class="w-5 h-5"></i>
         </div>
         <h4 class="font-bold text-slate-900 text-base">Backend &amp; Systems</h4>
         <ul class="text-xs text-slate-600 space-y-1.5 font-medium">
-          <li>• FastAPI &amp; Django</li>
+          <li>• FastAPI &amp; Django REST</li>
           <li>• Celery &amp; Redis Queues</li>
-          <li>• RESTful API Design</li>
+          <li>• Keyset Cursor Pagination</li>
           <li>• Asyncio &amp; Concurrency</li>
-          <li>• Microservices</li>
+          <li>• WebSockets &amp; Event Streams</li>
         </ul>
       </div>
 
       <div class="bg-white border border-slate-200 rounded-xl p-5 space-y-3 card-hover shadow-sm">
-        <div class="w-9 h-9 rounded-lg bg-purple-100 text-purple-700 flex items-center justify-center">
+        <div class="w-9 h-9 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center">
           <i data-lucide="bot" class="w-5 h-5"></i>
         </div>
         <h4 class="font-bold text-slate-900 text-base">AI &amp; Machine Learning</h4>
         <ul class="text-xs text-slate-600 space-y-1.5 font-medium">
           <li>• Google TensorFlow</li>
           <li>• Hugging Face Transformers</li>
-          <li>• LangChain &amp; Multi-Agent Systems</li>
+          <li>• LangChain &amp; Multi-Agent Workflows</li>
           <li>• LLM Evaluation &amp; Benchmarks</li>
-          <li>• RAG Architecture</li>
+          <li>• RAG Architecture &amp; Vector DBs</li>
         </ul>
       </div>
 
       <div class="bg-white border border-slate-200 rounded-xl p-5 space-y-3 card-hover shadow-sm">
-        <div class="w-9 h-9 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center">
+        <div class="w-9 h-9 rounded-lg bg-blue-100 text-blue-800 flex items-center justify-center">
           <i data-lucide="terminal" class="w-5 h-5"></i>
         </div>
-        <h4 class="font-bold text-slate-900 text-base">DevOps &amp; Tools</h4>
+        <h4 class="font-bold text-slate-900 text-base">DevOps &amp; Infrastructure</h4>
         <ul class="text-xs text-slate-600 space-y-1.5 font-medium">
           <li>• Docker &amp; Docker Compose</li>
           <li>• GitHub Actions CI/CD</li>
-          <li>• Git Version Control</li>
-          <li>• Linux Environment</li>
+          <li>• Reverse Proxies &amp; Gateways</li>
+          <li>• Architecture Decision Records (ADRs)</li>
           <li>• Pytest Automation</li>
         </ul>
       </div>
@@ -400,13 +569,14 @@
     <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
       <div class="text-center sm:text-left">
         <p class="text-sm font-bold text-slate-900">Vimal Sahani</p>
-        <p class="text-xs text-slate-500">Student &amp; Software Developer @ IIIT Bhopal</p>
+        <p class="text-xs text-slate-500">B.Tech IT @ IIIT Bhopal ('27) • Backend &amp; AI Systems Engineer</p>
       </div>
 
-      <div class="flex items-center gap-6 text-xs font-medium text-slate-600">
-        <a href="https://github.com/VimalN2005" target="_blank" class="hover:text-emerald-600 transition-colors">GitHub</a>
-        <a href="mailto:vimalsahani2005@gmail.com" class="hover:text-emerald-600 transition-colors">Email</a>
-        <a href="https://vimalsahani.me" class="hover:text-emerald-600 transition-colors">vimalsahani.me</a>
+      <div class="flex items-center gap-6 text-xs font-semibold text-slate-600">
+        <a href="https://github.com/VimalN2005" target="_blank" class="hover:text-emerald-700 transition-colors">GitHub</a>
+        <a href="https://www.linkedin.com/in/vimal-sahani" target="_blank" class="hover:text-emerald-700 transition-colors">LinkedIn</a>
+        <a href="mailto:vimalsahani2005@gmail.com" class="hover:text-emerald-700 transition-colors">Email</a>
+        <a href="https://vimalsahani.me" class="hover:text-emerald-700 transition-colors">vimalsahani.me</a>
       </div>
 
       <p class="text-xs text-slate-400">
@@ -417,6 +587,22 @@
 
   <script>
     lucide.createIcons();
+
+    function filterProjects(category) {
+      const cards = document.querySelectorAll('.project-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
   </script>
 </body>
 </html>
