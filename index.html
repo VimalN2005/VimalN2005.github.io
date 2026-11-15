@@ -130,7 +130,7 @@
             <p class="text-[11px] font-medium text-slate-500">Merged PRs</p>
           </div>
           <div class="p-2.5 rounded-lg bg-slate-50 border border-slate-100">
-            <p class="text-2xl font-extrabold text-slate-900 font-mono">5+</p>
+            <p class="text-2xl font-extrabold text-slate-900 font-mono">6+</p>
             <p class="text-[11px] font-medium text-slate-500">Systems Built</p>
           </div>
         </div>
@@ -165,7 +165,7 @@
 
       <!-- Filter Buttons -->
       <div class="flex flex-wrap gap-2 text-xs font-semibold">
-        <button onclick="filterProjects('all')" class="filter-btn active px-3.5 py-1.5 rounded-lg border border-slate-300 bg-white text-slate-700 hover:border-emerald-600 transition-all">All (5)</button>
+        <button onclick="filterProjects('all')" class="filter-btn active px-3.5 py-1.5 rounded-lg border border-slate-300 bg-white text-slate-700 hover:border-emerald-600 transition-all">All (6)</button>
         <button onclick="filterProjects('backend')" class="filter-btn px-3.5 py-1.5 rounded-lg border border-slate-300 bg-white text-slate-700 hover:border-emerald-600 transition-all">Backend &amp; Systems</button>
         <button onclick="filterProjects('ai')" class="filter-btn px-3.5 py-1.5 rounded-lg border border-slate-300 bg-white text-slate-700 hover:border-emerald-600 transition-all">AI &amp; LLM Engineering</button>
       </div>
@@ -173,6 +173,40 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-grid">
       
+      <!-- Project 0: RetryLab (Flagship) -->
+      <div onclick="openProjectModal('retrylab')" class="project-card bg-white border-2 border-emerald-500/40 rounded-2xl p-6 flex flex-col justify-between card-hover shadow-md relative overflow-hidden md:col-span-2 cursor-pointer" data-category="backend">
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-bold text-emerald-800 uppercase tracking-wider font-mono bg-emerald-50 px-2.5 py-1 rounded border border-emerald-300">Flagship • Polyglot Reliability</span>
+              <span class="text-[11px] font-bold text-amber-800 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">v1.0.0 GA</span>
+            </div>
+            <span class="text-xs text-emerald-700 font-semibold flex items-center gap-1">Tap to View Specs <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i></span>
+          </div>
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+            <h3 class="text-xl sm:text-2xl font-bold text-slate-900">RetryLab: Zero-Daemon API Reliability &amp; Chaos Engineering</h3>
+            <span class="text-xs font-mono text-emerald-700 font-bold">30-Day Sprint • 91 Commits • 340+ Tests</span>
+          </div>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Production-grade, zero-daemon API resilience &amp; chaos engineering toolkit across <strong>Python, Go, and TypeScript</strong>. Injects transient faults (HTTP 429, 503, jitter, connection drops) in-process without Docker/Envoy sidecars. Features cryptographic SHA-256 idempotency mutation auditing, exponential backoff timing verification, interactive browser Chaos Studio, multi-region latency modeling, and zero-day security audit scanners.
+          </p>
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="px-2.5 py-1 rounded-md bg-emerald-50 text-xs font-medium text-emerald-800 border border-emerald-200">Python Core</span>
+            <span class="px-2.5 py-1 rounded-md bg-blue-50 text-xs font-medium text-blue-800 border border-blue-200">Go 1.22+ SDK</span>
+            <span class="px-2.5 py-1 rounded-md bg-amber-50 text-xs font-medium text-amber-800 border border-amber-200">TypeScript / Node.js</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-medium text-slate-700">Rich Terminal TUI</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-medium text-slate-700">Chaos Studio SPA</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-100 text-xs font-medium text-slate-700">OpenTelemetry Tracing</span>
+          </div>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+          <span class="text-xs font-bold text-emerald-700 flex items-center gap-1">
+            Explore Polyglot Architecture &amp; Specs <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+          </span>
+          <span class="text-xs text-slate-400 font-mono">MIT Licensed • 91 Commits</span>
+        </div>
+      </div>
+
       <!-- Project 1: AI Agent Evaluation -->
       <div onclick="openProjectModal('ai-eval')" class="project-card bg-white border border-slate-200 rounded-2xl p-6 flex flex-col justify-between card-hover shadow-sm" data-category="ai">
         <div class="space-y-4">
@@ -729,6 +763,41 @@
 
     // PROJECT DATABASE WITH FULL ARCHITECTURE SPECS
     const PROJECTS_DATA = {
+      "retrylab": {
+        title: "RetryLab: Zero-Daemon API Reliability & Chaos Engineering Toolkit",
+        category: "Polyglot Reliability & Chaos Systems",
+        status: "v1.0.0 Production GA (91 Commits • 340+ Tests)",
+        github: "https://github.com/VimalN2005/retrylab",
+        stack: ["Python (HTTPX/Requests)", "Go (net/http)", "TypeScript (Fetch/Axios)", "FastAPI", "Rich TUI", "Chaos Studio"],
+        overview: "A production-grade, zero-daemon API resilience & chaos engineering toolkit engineered across Python, Go, and TypeScript. Injects transient failures, validates exponential backoff timing, audits cryptographic SHA-256 idempotency mutations, models multi-cloud latency disruptions, and simulates chaos in-process with zero external infrastructure overhead.",
+        architecture: `
+[Polyglot Client Apps: Python | Go | TypeScript]
+                     │
+                     ▼
+  ┌────────────────────────────────────────────────────────┐
+  │         RetryLab In-Process Chaos Interceptor          │
+  │  • Fault Matrix (HTTP 429, 503, Flaky, Jitter, Drops)  │
+  │  • Cryptographic SHA-256 Idempotency Mutation Auditor  │
+  │  • Exponential Backoff & Timing Variance Verifier      │
+  └──────────────────────────┬─────────────────────────────┘
+                             │
+        ┌────────────────────┼────────────────────┐
+        ▼                    ▼                    ▼
+[Terminal Rich TUI]  [Chaos Studio SPA]   [OpenTelemetry Spans]
+ • Realtime Gauges    • Visual Matrix      • Traceparent Context
+ • Health Scorecards  • Interactive Sliders • W3C Trace Injection
+                             │
+                             ▼
+             [Target Upstream Production APIs]
+        `,
+        highlights: [
+          "Zero-daemon architecture: in-process interceptors without heavy Envoy or Docker sidecars.",
+          "Full polyglot SDK parity across Python (HTTPX/Requests), Go (net/http), and TypeScript (Fetch/Axios).",
+          "Cryptographic SHA-256 idempotency mutation auditor preventing silent data corruption on retried mutations.",
+          "Multi-cloud latency matrix modeling & undersea cable disruption chaos simulation.",
+          "Interactive Web Chaos Studio & 340+ automated tests across Python, Go, and TypeScript."
+        ]
+      },
       "ai-eval": {
         title: "AI Agent Evaluation & Reliability Platform",
         category: "AI & LLM Systems",
@@ -1186,14 +1255,16 @@
       const qLower = q.toLowerCase();
       let ans = "Vimal Sahani is a Backend & AI Systems Engineer at IIIT Bhopal with 19+ merged PRs across Google TensorFlow, Django, and Celery.";
       
-      if (qLower.includes("django")) {
+      if (qLower.includes("retrylab") || qLower.includes("chaos") || qLower.includes("reliability")) {
+        ans = "RetryLab is Vimal's flagship polyglot API reliability and chaos engineering toolkit (v1.0.0 GA, 30-day sprint) supporting Python, Go, and TypeScript with 340+ tests. Features zero-daemon in-process interceptors, SHA-256 idempotency auditing, interactive Chaos Studio, and multi-region latency modeling.";
+      } else if (qLower.includes("django")) {
         ans = "Vimal contributed to Django core (PR #21875 - added qualname helper to django.utils.module_loading). He also built 'socialFeed' using Django REST Framework with 20 Architecture Decision Records (ADRs).";
       } else if (qLower.includes("tensorflow")) {
         ans = "In Google TensorFlow (PR #127639), Vimal built a float64 regression test harness for tf.math.log_sigmoid second derivative calculations in core Python API test suites.";
       } else if (qLower.includes("celery")) {
         ans = "Vimal has 3 merged PRs in Celery (#10605, #10606, #10607), fixing database backend stamping metadata, task children propagation, and multi-server URL sanitization.";
       } else if (qLower.includes("project")) {
-        ans = "Vimal's top 5 systems are: (1) AI Agent Evaluation & Reliability Platform, (2) socialFeed Engine, (3) DevPilot Codebase Intelligence, (4) FluxMesh Distributed Orchestrator, (5) EdgeFlow API Gateway.";
+        ans = "Vimal's top 6 systems are: (1) RetryLab Zero-Daemon Polyglot Chaos & Reliability Toolkit, (2) AI Agent Evaluation & Reliability Platform, (3) socialFeed Engine, (4) DevPilot Codebase Intelligence, (5) FluxMesh Distributed Orchestrator, (6) EdgeFlow API Gateway.";
       } else if (qLower.includes("intern") || qLower.includes("hire") || qLower.includes("contact")) {
         ans = "Vimal is actively seeking Software Engineering & AI Systems internships ('27). Reach out via vimalsahani2005@gmail.com or the Get in Touch button!";
       }

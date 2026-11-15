@@ -77,17 +77,19 @@ flowchart TD
 
 ---
 
-## 🚀 The Big 5 Flagship Systems
+## 🚀 Flagship Systems & Tools
 
-1. **[AI Agent Evaluation & Reliability Platform](https://github.com/VimalN2005/AI-Agent-Evaluation-Reliability-Platform)**  
+1. **[RetryLab: Zero-Daemon API Reliability & Chaos Engineering Toolkit](https://github.com/VimalN2005/retrylab)** `v1.0.0 GA`  
+   *Production-grade polyglot API resilience & chaos toolkit (Python, Go, TypeScript) with zero external daemons, in-process fault injection, cryptographic SHA-256 idempotency auditing, interactive Chaos Studio, and 340+ tests.*
+2. **[AI Agent Evaluation & Reliability Platform](https://github.com/VimalN2005/AI-Agent-Evaluation-Reliability-Platform)**  
    *Benchmarking, Hallucination detection, RAG retrieval quality, latency & cost evaluation using FastAPI, Celery, and Docker.*
-2. **[socialFeed: High-Throughput Distributed Feed Engine](https://github.com/VimalN2005/socialFeed)**  
+3. **[socialFeed: High-Throughput Distributed Feed Engine](https://github.com/VimalN2005/socialFeed)**  
    *Hybrid fan-out timeline architecture, keyset cursor pagination, Min-Heap ranking, documented with 20 Architectural Decision Records (ADRs).*
-3. **[DevPilot: RAG-Powered Codebase Intelligence](https://github.com/VimalN2005/DevPilot)**  
+4. **[DevPilot: RAG-Powered Codebase Intelligence](https://github.com/VimalN2005/DevPilot)**  
    *AST code parser, vector database chunking, and automated GitHub PR code reviews.*
-4. **[FluxMesh: Distributed Job Orchestrator](https://github.com/VimalN2005/FluxMesh)**  
+5. **[FluxMesh: Distributed Job Orchestrator](https://github.com/VimalN2005/FluxMesh)**  
    *Task prioritization, worker heartbeat registry, and exponential backoff dead-letter recovery.*
-5. **[EdgeFlow: API Gateway & Model Failover Proxy](https://github.com/VimalN2005/EdgeFlow)**  
+6. **[EdgeFlow: API Gateway & Model Failover Proxy](https://github.com/VimalN2005/EdgeFlow)**  
    *Token bucket rate limiting, circuit breaker pattern, and automated multi-provider LLM failover.*
 
 ---
