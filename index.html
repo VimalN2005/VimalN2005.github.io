@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vimal Sahani | Backend Infrastructure &amp; AI Systems Engineer</title>
-  <meta name="description" content="Portfolio of Vimal Sahani - Backend Engineer, AI Systems Developer, Open Source Contributor to Google TensorFlow, Django, and Celery." />
+  <title>Vimal Sahani | Backend Infrastructure, Cloud-Native &amp; AI Systems Engineer</title>
+  <meta name="description" content="Portfolio of Vimal Sahani - Backend &amp; Cloud-Native Systems Engineer, CNCF Meshery &amp; OpenTelemetry Contributor, Google TensorFlow, Django, and PyTorch." />
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -84,15 +84,15 @@
       
       <div class="space-y-6 max-w-2xl">
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">
-          <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Open to Backend &amp; AI Engineering Internships ('27)
+          <span class="w-2 h-2 rounded-full bg-emerald-600"></span> Open to Cloud-Native, Backend &amp; AI Engineering Internships ('27)
         </div>
         
         <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
-          Backend Infrastructure &amp; <span class="text-emerald-700">AI Systems</span> Engineer
+          Cloud-Native, Backend &amp; <span class="text-emerald-700">AI Systems</span> Engineer
         </h1>
         
         <p class="text-lg text-slate-600 leading-relaxed font-normal">
-          Hi, I'm <strong class="text-slate-900 font-semibold">Vimal Sahani</strong> — IT undergrad at <strong class="text-slate-900 font-semibold">IIIT Bhopal</strong>. I design high-throughput backend engines (<strong class="text-slate-800">Django, FastAPI</strong>), scalable microservices, and reliable <strong class="text-slate-800">LLM evaluation pipelines</strong>. Core open-source contributor to <strong class="text-emerald-800">TensorFlow</strong>, <strong class="text-emerald-800">Django</strong>, <strong class="text-emerald-800">Celery</strong>, and <strong class="text-emerald-800">Hugging Face</strong>.
+          Hi, I'm <strong class="text-slate-900 font-semibold">Vimal Sahani</strong> — IT undergrad at <strong class="text-slate-900 font-semibold">IIIT Bhopal</strong>. I design high-throughput backend engines (<strong class="text-slate-800">Go, Django, FastAPI</strong>), cloud-native service meshes (<strong class="text-slate-800">CNCF Meshery, Kubernetes</strong>), and distributed telemetry pipelines. Core contributor to <strong class="text-emerald-800">CNCF Meshery</strong> (5 merged PRs), <strong class="text-emerald-800">CNCF OpenTelemetry</strong>, <strong class="text-emerald-800">Google TensorFlow</strong>, and <strong class="text-emerald-800">Django</strong>.
         </p>
 
         <!-- CTAs -->
@@ -347,13 +347,50 @@
         <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-amber-600"></i> Tap any card for merged code diff breakdown
       </div>
       <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 flex items-center gap-3">
-        <i data-lucide="git-pull-request" class="text-emerald-700"></i> Open Source Contributions (19+ Merged PRs)
+        <i data-lucide="git-pull-request" class="text-emerald-700"></i> Open Source Contributions (25+ Merged PRs)
       </h2>
-      <p class="text-slate-500 text-sm mt-1">Real-world production patches merged into industry-defining foundations.</p>
+      <p class="text-slate-500 text-sm mt-1">Production patches merged into CNCF Meshery, OpenTelemetry, Google, and Linux foundations.</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       
+      <!-- CNCF Meshery & Layer5 -->
+      <div onclick="openPRModal('meshery')" class="bg-white border-2 border-emerald-300 rounded-xl p-5 flex flex-col justify-between card-hover shadow-sm relative overflow-hidden">
+        <div class="absolute top-0 right-0 bg-emerald-700 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-bl font-mono tracking-wider">CNCF FLAGSHIP</div>
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-800 border border-emerald-200">CNCF Meshery (Go)</span>
+            <span class="text-xs text-emerald-700 font-mono font-bold">5 PRs Merged ✓</span>
+          </div>
+          <h3 class="font-bold text-slate-900 text-base">meshery/meshery &amp; meshkit</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Engineered concurrent <code class="bg-slate-100 px-1 py-0.5 rounded text-slate-800 font-mono text-[11px]">ExportModel</code> temp dir isolation (#22609), nil patternData guards (#22898), OpenAPI profile remediation (#22240), and Kubernetes connection deduplication (#13761).
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+          <span class="text-emerald-700 font-semibold flex items-center gap-1">PRs #22898, #22609, #22240... <i data-lucide="arrow-up-right" class="w-3 h-3"></i></span>
+          <span class="text-slate-500 font-mono">Cloud Native</span>
+        </div>
+      </div>
+
+      <!-- CNCF OpenTelemetry -->
+      <div onclick="openPRModal('opentelemetry')" class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between card-hover shadow-sm">
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-cyan-50 text-cyan-800 border border-cyan-200">CNCF OpenTelemetry</span>
+            <span class="text-xs text-emerald-700 font-mono font-bold">3 PRs Merged ✓</span>
+          </div>
+          <h3 class="font-bold text-slate-900 text-base">opentelemetry-python-contrib</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Preserved instrumentor singleton state on re-instantiation across OpenAI &amp; LlamaIndex (#869) and captured multimodal media inputs in GenAI telemetry standards (#853, #1086).
+          </p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+          <span class="text-emerald-700 font-semibold flex items-center gap-1">PRs #853, #869, #1086 <i data-lucide="arrow-up-right" class="w-3 h-3"></i></span>
+          <span class="text-slate-500 font-mono">Observability</span>
+        </div>
+      </div>
+
       <!-- Google TensorFlow -->
       <div onclick="openPRModal('tensorflow')" class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between card-hover shadow-sm">
         <div class="space-y-3">
@@ -482,6 +519,7 @@
         </div>
         <h4 class="font-bold text-slate-900 text-base">Languages</h4>
         <ul class="text-xs text-slate-600 space-y-1.5 font-medium">
+          <li>• Go / Golang (Concurrency, Channels)</li>
           <li>• Python 3.12 (Advanced)</li>
           <li>• C / C++</li>
           <li>• SQL (PostgreSQL, MySQL)</li>
@@ -524,6 +562,9 @@
         </div>
         <h4 class="font-bold text-slate-900 text-base">DevOps &amp; Infrastructure</h4>
         <ul class="text-xs text-slate-600 space-y-1.5 font-medium">
+          <li>• Kubernetes (CRDs, Lifecycle Sync)</li>
+          <li>• CNCF Meshery &amp; Service Mesh</li>
+          <li>• OpenTelemetry (Traces &amp; Metrics)</li>
           <li>• Docker &amp; Docker Compose</li>
           <li>• GitHub Actions CI/CD</li>
           <li>• Reverse Proxies &amp; Gateways</li>
@@ -620,9 +661,11 @@
         <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 space-y-2">
           <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider">Engineering Milestones</h4>
           <ul class="text-xs space-y-1.5 text-slate-600">
-            <li>• <strong>19+ Merged Pull Requests</strong> across Google TensorFlow, Django, Celery, and Hugging Face.</li>
+            <li>• <strong>25+ Merged Pull Requests</strong> across CNCF Meshery, OpenTelemetry, Google TensorFlow, Django, and Celery.</li>
+            <li>• <strong>CNCF Meshery Core Contributor</strong>: Merged 5+ pull requests in Meshery Server (Go) &amp; MeshKit resolving concurrent model export race conditions, OpenAPI schema routing, and Kubernetes connection deduplication.</li>
+            <li>• <strong>CNCF OpenTelemetry Contributor</strong>: Merged GenAI semantic conventions &amp; instrumentations (#853, #869, #1086).</li>
+            <li>• Built <strong>RetryLab</strong> with 340+ automated tests across Python, Go, and TypeScript.</li>
             <li>• Built <strong>socialFeed</strong> with 20 Architectural Decision Records (ADRs) and hybrid fan-out pipelines.</li>
-            <li>• Created <strong>AI Agent Evaluation &amp; Reliability Platform</strong> with Celery async workers and Docker.</li>
             <li>• Unlocked GitHub <strong>Pro, Galaxy Brain, and Pull Shark x2</strong> badges.</li>
           </ul>
         </div>
@@ -939,6 +982,22 @@
 
     // OPEN SOURCE PR DATABASE
     const PR_DATA = {
+      "meshery": {
+        title: "CNCF Meshery &amp; Layer5 (5 PRs Merged)",
+        badge: "CNCF Cloud Native",
+        upstream: "meshery/meshery &amp; layer5io/meshkit",
+        link: "https://github.com/meshery/meshery/pulls?q=is%3Apr+author%3AVimalN2005",
+        issue: "PRs #22898, #22609, #22240, #22372, #13761: Concurrent model export isolation, nil patternData validation, OpenAPI profile remediation, and Kubernetes duplicate connection suppression.",
+        solution: "Engineered critical server-side concurrency and data integrity fixes in Meshery Server (Go): (1) Isolated ExportModel working directories with per-request temp directories to prevent race conditions during parallel model exports (#22609); (2) Guarded against nil patternData in pattern updates and populated rich validation error events (#22898); (3) Corrected stale routes and remediated ErrMissingResultID in OpenAPI spec (#22240); (4) Suppressed duplicate Kubernetes connection registration events to prevent cluster state drift (#13761); (5) Authored migration risk analyzer and schema review checklists for GORM/SQLite (#22372)."
+      },
+      "opentelemetry": {
+        title: "CNCF OpenTelemetry GenAI (3 PRs Merged)",
+        badge: "CNCF Observability",
+        upstream: "open-telemetry/opentelemetry-python-contrib",
+        link: "https://github.com/open-telemetry/opentelemetry-python-contrib/pulls?q=is%3Apr+author%3AVimalN2005",
+        issue: "PRs #853, #869, #1086: Instrumentor singleton state corruption on re-instantiation and multimodal telemetry capture.",
+        solution: "Resolved crucial telemetry lifecycle defects: preserved instrumentor singleton state across repeated OpenAI and LlamaIndex instantiations, prevented method snapshot overwrites in Google GenAI instrumentation (#853, #869), and added multimodal media payload parsing to gen_ai.input.messages telemetry standards (#1086)."
+      },
       "tensorflow": {
         title: "Google TensorFlow (#127639)",
         badge: "Google Core ML",
@@ -1253,7 +1312,13 @@
 
     function fallbackAIAnswer(elemId, q) {
       const qLower = q.toLowerCase();
-      let ans = "Vimal Sahani is a Backend & AI Systems Engineer at IIIT Bhopal with 19+ merged PRs across Google TensorFlow, Django, and Celery.";
+      let ans = "Vimal Sahani is a Cloud-Native, Backend & AI Systems Engineer at IIIT Bhopal with 25+ merged PRs across CNCF Meshery, OpenTelemetry, Google TensorFlow, Django, and Celery.";
+      
+      if (qLower.includes("meshery") || qLower.includes("layer5") || qLower.includes("kubernetes") || qLower.includes("cncf")) {
+        ans = "Vimal is an active CNCF contributor with 5+ merged PRs in Meshery Server & MeshKit in Go, focusing on concurrent Kubernetes design imports, connection deduplication, and schema validation. He actively collaborates with the Layer5 community and maintainers.";
+      } else if (qLower.includes("opentelemetry") || qLower.includes("telemetry") || qLower.includes("otel")) {
+        ans = "In CNCF OpenTelemetry, Vimal contributed PRs #853, #869, and #1086 to opentelemetry-python-contrib, stabilizing GenAI instrumentation singletons and implementing multimodal payload tracing standards.";
+      }
       
       if (qLower.includes("retrylab") || qLower.includes("chaos") || qLower.includes("reliability")) {
         ans = "RetryLab is Vimal's flagship polyglot API reliability and chaos engineering toolkit (v1.0.0 GA, 30-day sprint) supporting Python, Go, and TypeScript with 340+ tests. Features zero-daemon in-process interceptors, SHA-256 idempotency auditing, interactive Chaos Studio, and multi-region latency modeling.";
